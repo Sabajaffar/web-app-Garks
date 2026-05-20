@@ -27,31 +27,52 @@ const CUSTOMER_WELCOME = `Welcome to GarKS.\n\nI'm Gargi, your personal fashion 
 const ADMIN_QUICK_ACTIONS = ['Run Agent Analysis', 'Check Stock Levels', 'View Agent Logs'];
 const CUSTOMER_QUICK_ACTIONS = ['New Arrivals', 'Outfit Ideas', 'Find My Size', 'Track My Order'];
 
-function TypingDots() {
-  const a1 = useRef(new Animated.Value(0.3)).current;
-  const a2 = useRef(new Animated.Value(0.3)).current;
-  const a3 = useRef(new Animated.Value(0.3)).current;
+const SKELETON_WIDTHS = ['88%', '70%', '92%', '55%'];
+
+const apiCache = new Map<string, { text: string; ts: number }>();
+const CACHE_TTL = 20 * 60 * 1000;
+
+function getCached(key: string): string | null {
+  const entry = apiCache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.ts > CACHE_TTL) { apiCache.delete(key); return null; }
+  return entry.text;
+}
+function setCache(key: string, text: string) { apiCache.set(key, { text, ts: Date.now() }); }
+
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return Promise.race([promise, new Promise<T>((_, reject) => setTimeout(() => reject(new Error('timeout')), ms))]);
+}
+
+function SkeletonLoader() {
+  const shimmer = useRef(new Animated.Value(0.25)).current;
   useEffect(() => {
-    const animate = (anim: Animated.Value, delay: number) =>
-      Animated.loop(Animated.sequence([
-        Animated.delay(delay),
-        Animated.timing(anim, { toValue: 1, duration: 400, useNativeDriver: true }),
-        Animated.timing(anim, { toValue: 0.3, duration: 400, useNativeDriver: true }),
-      ])).start();
-    animate(a1, 0); animate(a2, 200); animate(a3, 400);
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(shimmer, { toValue: 0.9, duration: 750, useNativeDriver: true }),
+        Animated.timing(shimmer, { toValue: 0.25, duration: 750, useNativeDriver: true }),
+      ])
+    ).start();
   }, []);
   return (
-    <View style={tdStyles.row}>
-      {[a1, a2, a3].map((a, i) => (
-        <Animated.View key={i} style={[tdStyles.dot, { opacity: a }]} />
+    <View style={skStyles.wrap}>
+      <View style={skStyles.header}>
+        <Animated.View style={[skStyles.dot, { opacity: shimmer }]} />
+        <Animated.View style={[skStyles.headerLine, { opacity: shimmer }]} />
+      </View>
+      {SKELETON_WIDTHS.map((w, i) => (
+        <Animated.View key={i} style={[skStyles.line, { width: w as any, opacity: shimmer, marginTop: i === 0 ? 10 : 6 }]} />
       ))}
     </View>
   );
 }
 
-const tdStyles = StyleSheet.create({
-  row: { flexDirection: 'row', gap: 5, alignItems: 'center', paddingHorizontal: 16, paddingVertical: 12 },
-  dot: { width: 7, height: 7, backgroundColor: COLORS.primary, borderRadius: 3.5 },
+const skStyles = StyleSheet.create({
+  wrap: { paddingHorizontal: 16, paddingVertical: 14, gap: 0 },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: COLORS.secondary },
+  headerLine: { height: 8, width: 100, backgroundColor: `${COLORS.secondary}60`, borderRadius: 4 },
+  line: { height: 9, backgroundColor: `${COLORS.muted}40`, borderRadius: 5 },
 });
 
 export default function GargiAssistant({ navigation }: any) {
@@ -153,16 +174,27 @@ export default function GargiAssistant({ navigation }: any) {
     if (!userMessage.trim()) return;
     setHistory(prev => [...prev, { role: 'user', text: userMessage }]);
     setIsTyping(true);
+
+    const cacheKey = `${isAdmin ? 'admin' : 'customer'}:${userMessage.trim().toLowerCase()}`;
+    const cached = getCached(cacheKey);
+    if (cached) {
+      setHistory(prev => [...prev, { role: 'ai', text: cached }]);
+      setIsTyping(false);
+      return;
+    }
+
     try {
       let agentData = null;
-      if (isAdmin) {
-        const lowerMsg = userMessage.toLowerCase();
-        if (lowerMsg.includes('sale') || lowerMsg.includes('inventory') || lowerMsg.includes('stock') || lowerMsg.includes('revenue') || lowerMsg.includes('agent') || lowerMsg.includes('run')) {
-          const agentRes = await fetch(`${API_BASE}/api/agent/run`, { method: 'POST' });
+      const lowerMsg = userMessage.toLowerCase();
+      const needsAgent = isAdmin && (lowerMsg.includes('sale') || lowerMsg.includes('inventory') || lowerMsg.includes('stock') || lowerMsg.includes('revenue') || lowerMsg.includes('agent') || lowerMsg.includes('run') || lowerMsg.includes('analys'));
+      if (needsAgent) {
+        try {
+          const agentRes = await withTimeout(fetch(`${API_BASE}/api/agent/run`, { method: 'POST' }), 10000);
           agentData = await agentRes.json();
-        }
+        } catch { /* agent unavailable — continue with chat only */ }
       }
-      const response = await fetch(`${API_BASE}/api/gargi/chat`, {
+
+      const chatRes = await withTimeout(fetch(`${API_BASE}/api/gargi/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -170,11 +202,13 @@ export default function GargiAssistant({ navigation }: any) {
           isAdmin,
           context: { userName: user?.name, currentView: mode, agentAnalysis: agentData },
         }),
-      });
-      const data = await response.json();
+      }), 10000);
+      const data = await chatRes.json();
+      const responseText = data.text || 'I am momentarily unavailable. Please try again.';
+      setCache(cacheKey, responseText);
       setHistory(prev => [...prev, {
         role: 'ai',
-        text: data.text || 'I am momentarily unavailable. Please try again.',
+        text: responseText,
         isAgentResult: !!agentData,
         agentData: agentData ? {
           recommended_discount: agentData.recommended_discount,
@@ -186,8 +220,14 @@ export default function GargiAssistant({ navigation }: any) {
         showApprovalButtons: agentData?.sale_recommended && isAdmin,
         approvalStatus: agentData?.sale_recommended ? 'pending' : undefined,
       }]);
-    } catch {
-      setHistory(prev => [...prev, { role: 'ai', text: "I'm momentarily unavailable. Please try again in a moment." }]);
+    } catch (err: any) {
+      const isTimeout = err?.message === 'timeout';
+      setHistory(prev => [...prev, {
+        role: 'ai',
+        text: isTimeout
+          ? "Response took too long. Here's what I know: check Inventory for stock alerts, or visit AI Lab for a full analysis."
+          : "I'm momentarily unavailable. Please try again in a moment.",
+      }]);
     } finally {
       setIsTyping(false);
     }
@@ -422,7 +462,7 @@ export default function GargiAssistant({ navigation }: any) {
           ))}
           {isTyping && (
             <View style={styles.msgRow}>
-              <View style={[styles.bubble, styles.bubbleAI]}><TypingDots /></View>
+              <View style={[styles.bubble, styles.bubbleAI, { paddingHorizontal: 4, paddingVertical: 4 }]}><SkeletonLoader /></View>
             </View>
           )}
         </ScrollView>

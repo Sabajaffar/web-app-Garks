@@ -8,7 +8,7 @@ import { haptic } from '../../lib/utils';
 
 const CATEGORY_COLORS: Record<string, string> = {
   Fabric: COLORS.primary,
-  Leather: COLORS.warning,
+  Leather: COLORS.secondary,
   Accessories: COLORS.purple,
 };
 
@@ -41,7 +41,7 @@ export default function Suppliers() {
           <Text style={styles.subtitle}>{suppliers.length} active vendors</Text>
         </View>
         <TouchableOpacity style={styles.addBtn} onPress={() => setShowAddModal(true)} activeOpacity={0.85}>
-          <Plus size={16} color="#000" />
+          <Plus size={16} color={COLORS.bg} />
           <Text style={styles.addBtnText}>Add</Text>
         </TouchableOpacity>
       </View>
@@ -55,31 +55,53 @@ export default function Suppliers() {
         data={filtered}
         keyExtractor={s => s.id}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingHorizontal: 16, gap: 10, paddingBottom: 80 }}
+        contentContainerStyle={{ paddingHorizontal: 16, gap: 14, paddingBottom: 80 }}
         renderItem={({ item }) => {
           const color = CATEGORY_COLORS[item.category] || COLORS.muted;
           return (
             <View style={styles.supplierCard}>
+              {/* Header row */}
               <View style={styles.supplierHeader}>
-                <View style={[styles.supplierAvatar, { backgroundColor: `${color}18` }]}>
+                <View style={[styles.supplierAvatar, { backgroundColor: `${color}18`, borderColor: `${color}30` }]}>
                   <Text style={[styles.supplierAvatarText, { color }]}>{item.contactPerson[0]}</Text>
                 </View>
                 <View style={{ flex: 1 }}>
                   <Text style={styles.supplierName}>{item.company}</Text>
                   <Text style={styles.supplierContact}>{item.name}</Text>
                 </View>
-                <View style={[styles.categoryBadge, { backgroundColor: `${color}18` }]}>
+                <View style={[styles.categoryBadge, { backgroundColor: `${color}15`, borderColor: `${color}25`, borderWidth: 1 }]}>
                   <Text style={[styles.categoryBadgeText, { color }]}>{item.category}</Text>
                 </View>
               </View>
+
+              {/* Divider */}
+              <View style={styles.cardDivider} />
+
+              {/* Contact details */}
               <View style={styles.supplierDetails}>
-                <View style={styles.detailRow}><Phone size={12} color={COLORS.muted} /><Text style={styles.detailText}>{item.phone}</Text></View>
-                <View style={styles.detailRow}><Mail size={12} color={COLORS.muted} /><Text style={styles.detailText}>{item.email}</Text></View>
-                <View style={styles.detailRow}><MapPin size={12} color={COLORS.muted} /><Text style={styles.detailText} numberOfLines={1}>{item.address}</Text></View>
+                <View style={styles.detailRow}>
+                  <View style={styles.detailIconWrap}><Phone size={12} color={COLORS.secondary} /></View>
+                  <Text style={styles.detailText}>{item.phone}</Text>
+                </View>
+                <View style={styles.detailRow}>
+                  <View style={styles.detailIconWrap}><Mail size={12} color={COLORS.secondary} /></View>
+                  <Text style={styles.detailText}>{item.email}</Text>
+                </View>
+                <View style={styles.detailRow}>
+                  <View style={styles.detailIconWrap}><MapPin size={12} color={COLORS.secondary} /></View>
+                  <Text style={styles.detailText} numberOfLines={1}>{item.address}</Text>
+                </View>
               </View>
+
+              {/* Rating row */}
               <View style={styles.ratingRow}>
-                {[1,2,3,4,5].map(i => <Star key={i} size={12} color={COLORS.warning} fill={i <= Math.floor(item.rating) ? COLORS.warning : 'none'} />)}
-                <Text style={styles.ratingText}>{item.rating}</Text>
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} size={13} color={COLORS.secondary} fill={i <= Math.floor(item.rating) ? COLORS.secondary : 'none'} />
+                ))}
+                <Text style={styles.ratingText}>{item.rating.toFixed(1)}</Text>
+                <View style={styles.ratingBadge}>
+                  <Text style={styles.ratingBadgeText}>Verified Partner</Text>
+                </View>
               </View>
             </View>
           );
@@ -118,35 +140,39 @@ export default function Suppliers() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.bg },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 24, paddingVertical: 16 },
-  title: { fontFamily: FONTS.serif, fontSize: 30, color: COLORS.text },
-  subtitle: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 2, marginTop: 2 },
-  addBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: COLORS.primary, paddingHorizontal: 14, paddingVertical: 10, borderRadius: RADIUS.lg, shadowColor: COLORS.primary, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 8, elevation: 6 },
-  addBtnText: { fontFamily: FONTS.sansBold, fontSize: 12, color: '#000' },
-  searchWrap: { flexDirection: 'row', alignItems: 'center', backgroundColor: COLORS.card, marginHorizontal: 20, marginBottom: 12, borderRadius: RADIUS.xl, paddingHorizontal: 14, paddingVertical: 11, gap: 10, borderWidth: 1, borderColor: 'rgba(255,255,255,0.04)' },
-  searchInput: { flex: 1, fontFamily: FONTS.sans, fontSize: 13, color: COLORS.text },
-  supplierCard: { backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 16, gap: 12, borderWidth: 1, borderColor: 'rgba(255,255,255,0.04)' },
-  supplierHeader: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  supplierAvatar: { width: 44, height: 44, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },
-  supplierAvatarText: { fontFamily: FONTS.serif, fontSize: 20 },
-  supplierName: { fontFamily: FONTS.sansBold, fontSize: 14, color: COLORS.text },
-  supplierContact: { fontFamily: FONTS.sans, fontSize: 12, color: COLORS.muted },
-  categoryBadge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: RADIUS.sm },
-  categoryBadgeText: { fontFamily: FONTS.mono, fontSize: 8, textTransform: 'uppercase', letterSpacing: 1 },
-  supplierDetails: { gap: 6 },
-  detailRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  detailText: { fontFamily: FONTS.sans, fontSize: 12, color: COLORS.muted, flex: 1 },
-  ratingRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-  ratingText: { fontFamily: FONTS.mono, fontSize: 10, color: COLORS.warning, marginLeft: 4 },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 24, paddingTop: 20, paddingBottom: 16 },
+  title: { fontFamily: FONTS.serif, fontSize: 34, color: COLORS.text, fontWeight: '700' },
+  subtitle: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 2, marginTop: 3 },
+  addBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: COLORS.primary, paddingHorizontal: 16, paddingVertical: 11, borderRadius: RADIUS.lg, shadowColor: COLORS.primary, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.25, shadowRadius: 8, elevation: 6 },
+  addBtnText: { fontFamily: FONTS.sansBold, fontSize: 12, color: COLORS.bg },
+  searchWrap: { flexDirection: 'row', alignItems: 'center', backgroundColor: COLORS.card, marginHorizontal: 20, marginBottom: 16, borderRadius: RADIUS.xl, paddingHorizontal: 16, paddingVertical: 13, gap: 12, borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)' },
+  searchInput: { flex: 1, fontFamily: FONTS.sans, fontSize: 14, color: COLORS.text },
+  supplierCard: { backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 20, borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)', gap: 0 },
+  supplierHeader: { flexDirection: 'row', alignItems: 'center', gap: 14, marginBottom: 16 },
+  supplierAvatar: { width: 52, height: 52, borderRadius: 16, alignItems: 'center', justifyContent: 'center', borderWidth: 1 },
+  supplierAvatarText: { fontFamily: FONTS.serif, fontSize: 22, fontWeight: '700' },
+  supplierName: { fontFamily: FONTS.sansBold, fontSize: 15, color: COLORS.text },
+  supplierContact: { fontFamily: FONTS.sans, fontSize: 12, color: COLORS.muted, marginTop: 2 },
+  categoryBadge: { paddingHorizontal: 12, paddingVertical: 5, borderRadius: RADIUS.md },
+  categoryBadgeText: { fontFamily: FONTS.mono, fontSize: 9, textTransform: 'uppercase', letterSpacing: 1 },
+  cardDivider: { height: 1, backgroundColor: 'rgba(255,255,255,0.04)', marginBottom: 16 },
+  supplierDetails: { gap: 10, marginBottom: 16 },
+  detailRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  detailIconWrap: { width: 26, height: 26, borderRadius: 9, backgroundColor: `${COLORS.secondary}12`, alignItems: 'center', justifyContent: 'center' },
+  detailText: { fontFamily: FONTS.sans, fontSize: 13, color: COLORS.muted, flex: 1 },
+  ratingRow: { flexDirection: 'row', alignItems: 'center', gap: 5 },
+  ratingText: { fontFamily: FONTS.mono, fontSize: 11, color: COLORS.secondary, marginLeft: 4, fontWeight: '700' },
+  ratingBadge: { marginLeft: 'auto' as any, backgroundColor: `${COLORS.success}15`, paddingHorizontal: 10, paddingVertical: 4, borderRadius: RADIUS.full },
+  ratingBadgeText: { fontFamily: FONTS.mono, fontSize: 8, color: COLORS.success, textTransform: 'uppercase', letterSpacing: 1 },
   modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.75)', justifyContent: 'flex-end' },
-  modalCard: { backgroundColor: COLORS.card, borderTopLeftRadius: RADIUS['3xl'], borderTopRightRadius: RADIUS['3xl'], padding: 24, gap: 16, borderTopWidth: 1, borderColor: 'rgba(255,255,255,0.06)' },
-  modalTitle: { fontFamily: FONTS.serif, fontSize: 24, color: COLORS.text },
-  modalField: { gap: 6, marginBottom: 12 },
+  modalCard: { backgroundColor: COLORS.card, borderTopLeftRadius: RADIUS['3xl'], borderTopRightRadius: RADIUS['3xl'], padding: 28, gap: 18, borderTopWidth: 1, borderColor: `${COLORS.secondary}18` },
+  modalTitle: { fontFamily: FONTS.serif, fontSize: 26, color: COLORS.text, fontWeight: '700' },
+  modalField: { gap: 8, marginBottom: 12 },
   modalLabel: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 2 },
-  modalInput: { backgroundColor: COLORS.bg, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)', borderRadius: RADIUS.lg, paddingHorizontal: 14, paddingVertical: 12, fontFamily: FONTS.sans, fontSize: 13, color: COLORS.text },
+  modalInput: { backgroundColor: COLORS.bg, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)', borderRadius: RADIUS.lg, paddingHorizontal: 16, paddingVertical: 14, fontFamily: FONTS.sans, fontSize: 14, color: COLORS.text },
   modalActions: { flexDirection: 'row', gap: 12 },
-  cancelBtn: { flex: 1, backgroundColor: COLORS.bg, borderRadius: RADIUS.xl, paddingVertical: 14, alignItems: 'center', borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)' },
+  cancelBtn: { flex: 1, backgroundColor: COLORS.bg, borderRadius: RADIUS.xl, paddingVertical: 16, alignItems: 'center', borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)' },
   cancelText: { fontFamily: FONTS.sansBold, fontSize: 13, color: COLORS.muted },
-  confirmBtn: { flex: 1, backgroundColor: COLORS.primary, borderRadius: RADIUS.xl, paddingVertical: 14, alignItems: 'center' },
-  confirmText: { fontFamily: FONTS.sansBold, fontSize: 13, color: '#000' },
+  confirmBtn: { flex: 1, backgroundColor: COLORS.primary, borderRadius: RADIUS.xl, paddingVertical: 16, alignItems: 'center' },
+  confirmText: { fontFamily: FONTS.sansBold, fontSize: 13, color: COLORS.bg },
 });

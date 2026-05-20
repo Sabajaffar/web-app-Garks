@@ -176,6 +176,7 @@ export type AppState = {
   orderSupplierRestock: (productId: string, amount: number, vendorId: string, isAiAutomated: boolean) => void;
   setSaleBannerDismissed: (dismissed: boolean) => void;
   addProduct: (product: Omit<Product, 'id'>) => void;
+  gargiProactiveInsight: (page: 'inventory' | 'marketing') => string;
 };
 
 const INITIAL_SUPPLIERS: Supplier[] = [
@@ -517,6 +518,32 @@ export const useStore = create<AppState>()(
         const logMsg = `[${new Date().toLocaleTimeString()}] Admin added new product: ${productInfo.name} (${productInfo.category}).`;
         return { inventory: [newProduct, ...state.inventory], agentLogs: [...state.agentLogs, logMsg] };
       }),
+
+      gargiProactiveInsight: (page) => {
+        const state = get();
+        if (page === 'inventory') {
+          const critical = state.inventory.filter(p => p.stock === 0);
+          const low = state.inventory.filter(p => p.stock > 0 && p.stock < 5);
+          if (critical.length > 0) {
+            return `Critical: ${critical.map(p => p.name).join(', ')} ${critical.length === 1 ? 'is' : 'are'} out of stock. Immediate reorder required to prevent revenue loss.`;
+          }
+          if (low.length > 0) {
+            return `Low stock: ${low.map(p => `${p.name} (${p.stock} left)`).join(', ')}. Consider restocking before weekend peak demand.`;
+          }
+          return 'Inventory levels healthy. No critical alerts at this time.';
+        }
+        if (page === 'marketing') {
+          const active = state.campaigns.filter(c => c.status === 'Active');
+          if (state.saleActive) {
+            return `Flash sale live at ${state.saleDiscount}% off. Push an Instagram story now to drive urgency — expected conversion uplift: 18–22%.`;
+          }
+          if (active.length === 0) {
+            return 'No active campaigns detected. Recommend launching a "New Arrivals" email blast targeting VIP segments for maximum engagement.';
+          }
+          return `${active.length} active campaign${active.length > 1 ? 's' : ''} running. A/B test subject lines to push CTR above ${active[0]?.ctr || '0%'}.`;
+        }
+        return '';
+      },
     }),
     {
       name: 'garks-premium-store',

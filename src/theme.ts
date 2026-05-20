@@ -1,24 +1,59 @@
 export const COLORS = {
-  bg: '#0a1428',
-  card: '#0d1f33',
-  cardAlt: '#0f2440',
-  primary: '#60a5fa',
-  secondary: '#e0c9a8',
-  text: '#f1f5f9',
-  muted: '#94a3b8',
-  border: '#1e3a5f',
+  bg: '#1B2B5E',
+  card: '#132147',
+  cardAlt: '#0D1A3A',
+  primary: '#F5E6D3',
+  secondary: '#C9A96E',
+  text: '#FFFFFF',
+  muted: '#8B9CC8',
+  border: '#253875',
   danger: '#f87171',
   success: '#4ade80',
-  warning: '#fbbf24',
+  warning: '#C9A96E',
   purple: '#a855f7',
   pink: '#ec4899',
   black: '#000000',
   white: '#ffffff',
+  gold: '#C9A96E',
 };
 
+export function setThemeColors(theme: 'dark' | 'light' | 'premium-gold'): void {
+  if (theme === 'light') {
+    Object.assign(COLORS, {
+      bg: '#F5E6D3',
+      card: '#EAD8C3',
+      cardAlt: '#DEC9AD',
+      primary: '#1B2B5E',
+      secondary: '#C9A96E',
+      text: '#1B2B5E',
+      muted: '#6B7BA4',
+      border: '#D4C4AE',
+      danger: '#e53e3e',
+      success: '#276749',
+      warning: '#B8860B',
+      gold: '#C9A96E',
+    });
+  } else {
+    Object.assign(COLORS, {
+      bg: '#1B2B5E',
+      card: '#132147',
+      cardAlt: '#0D1A3A',
+      primary: '#F5E6D3',
+      secondary: '#C9A96E',
+      text: '#FFFFFF',
+      muted: '#8B9CC8',
+      border: '#253875',
+      danger: '#f87171',
+      success: '#4ade80',
+      warning: '#C9A96E',
+      gold: '#C9A96E',
+    });
+  }
+}
+
 export const FONTS = {
-  serif: 'PlayfairDisplay_700Bold',
-  serifItalic: 'PlayfairDisplay_400Regular_Italic',
+  serif: 'Georgia',
+  serifItalic: 'Georgia',
   sans: 'DMSans_400Regular',
   sansMedium: 'DMSans_500Medium',
   sansBold: 'DMSans_700Bold',
@@ -67,7 +102,7 @@ export const SHADOWS = {
     elevation: 12,
   },
   primary: {
-    shadowColor: '#60a5fa',
+    shadowColor: '#C9A96E',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 12,

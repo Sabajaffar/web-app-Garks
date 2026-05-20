@@ -7,11 +7,11 @@ import {
   Camera, RefreshCw, Lock, Sparkles
 } from 'lucide-react-native';
 import { useStore } from '../store/useStore';
-import { COLORS, FONTS, RADIUS } from '../theme';
+import { COLORS, FONTS, RADIUS, setThemeColors } from '../theme';
 import { haptic } from '../lib/utils';
 
 export default function Profile({ navigation }: any) {
-  const { user, mode, setMode, logout, adminPassword, setAdminPassword, adminSecurityCode, setAdminSecurityCode, lockAdmin, setToast } = useStore();
+  const { user, mode, setMode, theme, setTheme, logout, adminPassword, setAdminPassword, adminSecurityCode, setAdminSecurityCode, lockAdmin, setToast } = useStore();
   const insets = useSafeAreaInsets();
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
@@ -47,7 +47,7 @@ export default function Profile({ navigation }: any) {
   const menuItems = [
     { label: 'Concierge Assistant', icon: Sparkles, value: 'Personalized', onPress: () => {} },
     { label: 'Notifications', icon: Bell, value: notificationsEnabled ? 'Active' : 'Muted', onPress: () => { haptic('light'); setNotificationsEnabled(v => !v); } },
-    { label: 'Appearance', icon: Moon, value: 'Midnight Navy', onPress: () => haptic('light') },
+    { label: 'Appearance', icon: Moon, value: theme === 'dark' ? 'Midnight Navy' : 'Ivory Daylight', onPress: () => { haptic('light'); const next = theme === 'dark' ? 'light' : 'dark'; setTheme(next); setThemeColors(next); } },
     { label: 'Language', icon: Globe, value: 'English (UK)', onPress: () => {} },
     { label: 'Privacy Policy', icon: FileLock2, onPress: () => {} },
   ];

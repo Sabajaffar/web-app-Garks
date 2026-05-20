@@ -14,15 +14,15 @@ const CHART_CONFIG = {
   backgroundGradientFrom: COLORS.card,
   backgroundGradientTo: COLORS.card,
   decimalPlaces: 0,
-  color: (opacity = 1) => `rgba(96, 165, 250, ${opacity})`,
-  labelColor: (opacity = 1) => `rgba(148, 163, 184, ${opacity})`,
+  color: (opacity = 1) => `rgba(201, 169, 110, ${opacity})`,
+  labelColor: (opacity = 1) => `rgba(139, 156, 200, ${opacity})`,
   style: { borderRadius: 16 },
-  propsForDots: { r: '4', strokeWidth: '2', stroke: COLORS.primary },
+  propsForDots: { r: '4', strokeWidth: '2', stroke: '#C9A96E' },
 };
 
 const SALE_DATA = {
   labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  datasets: [{ data: [4000, 3000, 5000, 2780, 6890, 8900, 7200], color: () => COLORS.primary, strokeWidth: 2 }],
+  datasets: [{ data: [4000, 3000, 5000, 2780, 6890, 8900, 7200], color: () => COLORS.secondary, strokeWidth: 2 }],
 };
 
 const PEAK_DATA = {
@@ -31,10 +31,10 @@ const PEAK_DATA = {
 };
 
 const PIE_DATA = [
-  { name: 'Men', population: 45, color: '#4ade80', legendFontColor: COLORS.muted, legendFontSize: 11 },
-  { name: 'Women', population: 35, color: '#67e8a5', legendFontColor: COLORS.muted, legendFontSize: 11 },
-  { name: 'Kids', population: 15, color: COLORS.primary, legendFontColor: COLORS.muted, legendFontSize: 11 },
-  { name: 'Luxury', population: 5, color: COLORS.purple, legendFontColor: COLORS.muted, legendFontSize: 11 },
+  { name: 'Men', population: 45, color: '#C9A96E', legendFontColor: COLORS.muted, legendFontSize: 11 },
+  { name: 'Women', population: 35, color: '#F5E6D3', legendFontColor: COLORS.muted, legendFontSize: 11 },
+  { name: 'Kids', population: 15, color: '#253875', legendFontColor: COLORS.muted, legendFontSize: 11 },
+  { name: 'Luxury', population: 5, color: '#8B9CC8', legendFontColor: COLORS.muted, legendFontSize: 11 },
 ];
 
 const TOP_CITIES = [
@@ -51,7 +51,7 @@ export default function AdminDashboard() {
 
   const kpiCards = [
     { label: 'Revenue', value: `PKR ${(kpiRevenue / 1000).toFixed(1)}k`, change: '+12.5%', Icon: Activity, color: COLORS.success },
-    { label: 'Orders', value: kpiOrders.toLocaleString(), change: '+8.2%', Icon: ShoppingBag, color: '#67e8a5' },
+    { label: 'Orders', value: kpiOrders.toLocaleString(), change: '+8.2%', Icon: ShoppingBag, color: COLORS.secondary },
     { label: 'Customers', value: `${(kpiCustomers / 1000).toFixed(1)}k`, change: '+24.1%', Icon: Users, color: COLORS.primary },
     { label: 'AOV', value: `PKR ${kpiAOV.toFixed(0)}`, change: '-2.4%', Icon: TrendingUp, color: COLORS.danger },
   ];
@@ -73,19 +73,19 @@ export default function AdminDashboard() {
           <Text style={styles.subtitle}>GarKS Intel Center</Text>
         </View>
         <TouchableOpacity style={[styles.refreshBtn, isRefreshing && styles.refreshBtnSpin]} onPress={handleRefresh} activeOpacity={0.7}>
-          <RefreshCcw size={18} color={COLORS.primary} />
+          <RefreshCcw size={18} color={COLORS.secondary} />
         </TouchableOpacity>
       </View>
 
       {/* KPI Cards */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 20, gap: 14 }}>
         {kpiCards.map(card => {
           const { Icon } = card;
           const isPositive = card.change.startsWith('+');
           return (
-            <View key={card.label} style={styles.kpiCard}>
+            <View key={card.label} style={[styles.kpiCard, { borderLeftColor: card.color }]}>
               <View style={[styles.kpiIcon, { backgroundColor: `${card.color}18` }]}>
-                <Icon size={18} color={card.color} />
+                <Icon size={20} color={card.color} />
               </View>
               <Text style={styles.kpiValue}>{card.value}</Text>
               <Text style={styles.kpiLabel}>{card.label}</Text>
@@ -134,7 +134,7 @@ export default function AdminDashboard() {
           data={PEAK_DATA}
           width={CHART_WIDTH}
           height={150}
-          chartConfig={{ ...CHART_CONFIG, color: (opacity = 1) => `rgba(96, 165, 250, ${opacity * 0.8})` }}
+          chartConfig={{ ...CHART_CONFIG, color: (opacity = 1) => `rgba(201, 169, 110, ${opacity * 0.8})` }}
           yAxisLabel=""
           yAxisSuffix=""
           style={{ borderRadius: 16, marginTop: 8 }}
@@ -143,7 +143,7 @@ export default function AdminDashboard() {
       </View>
 
       {/* Top Cities */}
-      <View style={[styles.chartCard, { gap: 12 }]}>
+      <View style={[styles.chartCard, { gap: 14 }]}>
         <Text style={styles.chartTitle}>Top Sales Hubs</Text>
         {TOP_CITIES.map(city => (
           <View key={city.city} style={styles.cityRow}>
@@ -159,7 +159,7 @@ export default function AdminDashboard() {
       {/* Gargi Intelligence */}
       <View style={styles.gargiCard}>
         <View style={styles.gargiHeader}>
-          <View style={styles.gargiIconWrap}><BrainCircuit size={20} color={COLORS.primary} /></View>
+          <View style={styles.gargiIconWrap}><BrainCircuit size={20} color={COLORS.secondary} /></View>
           <View style={{ flex: 1 }}>
             <Text style={styles.gargiTitle}>Gargi Intelligence</Text>
             <Text style={styles.gargiSub}>Health 96% · Active</Text>
@@ -201,40 +201,40 @@ export default function AdminDashboard() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.bg },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 24, paddingVertical: 16 },
-  title: { fontFamily: FONTS.serif, fontSize: 30, color: COLORS.text },
-  subtitle: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 3, marginTop: 2 },
-  refreshBtn: { width: 40, height: 40, backgroundColor: COLORS.card, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 24, paddingTop: 20, paddingBottom: 16 },
+  title: { fontFamily: FONTS.serif, fontSize: 34, color: COLORS.text, fontWeight: '700' },
+  subtitle: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 3, marginTop: 3 },
+  refreshBtn: { width: 44, height: 44, backgroundColor: COLORS.card, borderRadius: 14, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: `${COLORS.secondary}22` },
   refreshBtnSpin: { opacity: 0.6 },
-  kpiCard: { width: 130, backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 16, gap: 4, borderWidth: 1, borderColor: 'rgba(255,255,255,0.04)', marginBottom: 16 },
-  kpiIcon: { width: 36, height: 36, borderRadius: 10, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
-  kpiValue: { fontFamily: FONTS.serif, fontSize: 20, color: COLORS.text },
+  kpiCard: { width: 152, backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 20, gap: 5, borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)', marginBottom: 20, borderLeftWidth: 3 },
+  kpiIcon: { width: 40, height: 40, borderRadius: 12, alignItems: 'center', justifyContent: 'center', marginBottom: 6 },
+  kpiValue: { fontFamily: FONTS.serif, fontSize: 22, color: COLORS.text, fontWeight: '700' },
   kpiLabel: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 1 },
-  kpiChangePill: { marginTop: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: RADIUS.sm, alignSelf: 'flex-start' },
+  kpiChangePill: { marginTop: 6, paddingHorizontal: 9, paddingVertical: 4, borderRadius: RADIUS.sm, alignSelf: 'flex-start' },
   kpiChangePos: { backgroundColor: `${COLORS.success}20` },
   kpiChangeNeg: { backgroundColor: `${COLORS.danger}20` },
   kpiChangeText: { fontFamily: FONTS.mono, fontSize: 9, fontWeight: '700' },
   kpiChangePosText: { color: COLORS.success },
   kpiChangeNegText: { color: COLORS.danger },
-  chartCard: { marginHorizontal: 20, marginTop: 16, backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.04)' },
-  chartTitle: { fontFamily: FONTS.sansBold, fontSize: 12, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 2 },
-  cityRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  cityName: { fontFamily: FONTS.sans, fontSize: 12, color: COLORS.text, width: 80 },
+  chartCard: { marginHorizontal: 20, marginTop: 16, backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 18, borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)' },
+  chartTitle: { fontFamily: FONTS.mono, fontSize: 10, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 2, fontWeight: '700' },
+  cityRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  cityName: { fontFamily: FONTS.sansMedium, fontSize: 13, color: COLORS.text, width: 84 },
   cityBarBg: { flex: 1, height: 6, backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: 3, overflow: 'hidden' },
-  cityBar: { height: '100%', backgroundColor: COLORS.primary, borderRadius: 3 },
-  cityRate: { fontFamily: FONTS.mono, fontSize: 10, color: COLORS.primary, width: 36, textAlign: 'right' },
-  gargiCard: { marginHorizontal: 20, marginTop: 16, backgroundColor: `${COLORS.primary}0a`, borderRadius: RADIUS['2xl'], padding: 18, gap: 14, borderWidth: 1, borderColor: `${COLORS.primary}22` },
-  gargiHeader: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  gargiIconWrap: { width: 40, height: 40, borderRadius: 12, backgroundColor: `${COLORS.primary}18`, alignItems: 'center', justifyContent: 'center' },
-  gargiTitle: { fontFamily: FONTS.sansBold, fontSize: 13, color: COLORS.text },
-  gargiSub: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.primary, textTransform: 'uppercase', letterSpacing: 1, marginTop: 2 },
-  alertBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: `${COLORS.warning}18`, paddingHorizontal: 10, paddingVertical: 5, borderRadius: RADIUS.sm },
+  cityBar: { height: '100%', backgroundColor: COLORS.secondary, borderRadius: 3 },
+  cityRate: { fontFamily: FONTS.mono, fontSize: 10, color: COLORS.secondary, width: 36, textAlign: 'right' },
+  gargiCard: { marginHorizontal: 20, marginTop: 16, backgroundColor: `${COLORS.secondary}0a`, borderRadius: RADIUS['2xl'], padding: 20, gap: 14, borderWidth: 1, borderColor: `${COLORS.secondary}22` },
+  gargiHeader: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  gargiIconWrap: { width: 44, height: 44, borderRadius: 14, backgroundColor: `${COLORS.secondary}18`, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: `${COLORS.secondary}22` },
+  gargiTitle: { fontFamily: FONTS.sansBold, fontSize: 14, color: COLORS.text },
+  gargiSub: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.secondary, textTransform: 'uppercase', letterSpacing: 1, marginTop: 2 },
+  alertBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, backgroundColor: `${COLORS.warning}18`, paddingHorizontal: 10, paddingVertical: 5, borderRadius: RADIUS.sm },
   alertBadgeText: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.warning },
-  gargiQuote: { fontFamily: FONTS.serifItalic, fontSize: 14, color: COLORS.text, lineHeight: 22 },
-  logsPreview: { backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: RADIUS.md, padding: 10, gap: 4 },
-  logLine: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, lineHeight: 14 },
+  gargiQuote: { fontFamily: FONTS.serifItalic, fontSize: 14, color: `${COLORS.text}dd`, lineHeight: 23, fontStyle: 'italic' },
+  logsPreview: { backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: RADIUS.md, padding: 12, gap: 5 },
+  logLine: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, lineHeight: 15 },
   retentionRow: { flexDirection: 'row', marginHorizontal: 20, marginTop: 12, gap: 12, marginBottom: 8 },
-  retentionCard: { backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 16, alignItems: 'center', gap: 4, borderWidth: 1, borderColor: 'rgba(255,255,255,0.04)' },
-  retentionValue: { fontFamily: FONTS.serif, fontSize: 28, color: COLORS.primary },
+  retentionCard: { backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 20, alignItems: 'center', gap: 6, borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)' },
+  retentionValue: { fontFamily: FONTS.serif, fontSize: 30, color: COLORS.secondary, fontWeight: '700' },
   retentionLabel: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 1 },
 });
