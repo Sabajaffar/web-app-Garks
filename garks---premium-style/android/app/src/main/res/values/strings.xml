@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GarKS-store</string>
+    <string name="title_activity_main">GarKS-store</string>
+    <string name="package_name">com.garks.app</string>
+    <string name="custom_url_scheme">com.garks.app</string>
+</resources>
