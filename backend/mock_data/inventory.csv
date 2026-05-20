@@ -1,0 +1,10 @@
+SKU,Name,Category,Stock,ReorderLevel,UnitCost,Supplier,LastUpdated,Location
+JK-LE-003,Biker Leather Jacket,Leather Jackets,80,20,550,Tuscan Leather S.p.A,2024-01-17,Warehouse-A
+SH-OX-001,Premium Oxford Shirt,Shirts,24,30,45,Milan Fabrics Co.,2024-01-20,Warehouse-B
+PN-CH-002,Slim Fit Chinos,Pants,35,25,38,Milan Fabrics Co.,2024-01-20,Warehouse-B
+HD-FL-004,Tech Fleece Hoodie,Hoodies,42,20,52,Milan Fabrics Co.,2024-01-20,Warehouse-B
+PL-PI-005,Classic Pique Polo,Polo Shirts,5,15,28,Milan Fabrics Co.,2024-01-19,Warehouse-A
+BL-SI-006,Silk Blouse,Women,15,10,65,Tuscan Leather S.p.A,2024-01-20,Warehouse-C
+TR-HW-007,High-Waist Trousers,Women,20,15,48,Indus Textiles,2024-01-20,Warehouse-C
+CT-TR-008,Oversized Trench Coat,Women,12,8,95,Milan Fabrics Co.,2024-01-19,Warehouse-C
+SW-CS-009,Cashmere Sweater,Women,0,5,110,Milan Fabrics Co.,2024-01-15,Warehouse-C

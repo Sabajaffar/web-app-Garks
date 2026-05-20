@@ -1,0 +1,57 @@
+{
+  "report_type": "Marketing Performance Report",
+  "period": "2024-01-13 to 2024-01-20",
+  "campaigns": [
+    {
+      "id": "c1",
+      "name": "Summer Solstice",
+      "channel": "Instagram",
+      "status": "Active",
+      "budget_pkr": 15000,
+      "spend_pkr": 12400,
+      "reach": "12,400 users",
+      "ctr_percent": 4.2,
+      "conversions": 184,
+      "revenue_attributed_pkr": 28600,
+      "roi_percent": 130.6,
+      "top_product": "Silk Blouse",
+      "recommendation": "Increase budget by PKR 3,000 — strong ROI on women's collection"
+    },
+    {
+      "id": "c2",
+      "name": "VIP Privilege",
+      "channel": "Email",
+      "status": "Active",
+      "budget_pkr": 5000,
+      "spend_pkr": 4200,
+      "reach": "2,100 users",
+      "ctr_percent": 12.8,
+      "conversions": 89,
+      "revenue_attributed_pkr": 14200,
+      "roi_percent": 238.1,
+      "top_product": "Biker Leather Jacket",
+      "recommendation": "Email VIP segment for emergency reorder awareness — high purchase intent"
+    },
+    {
+      "id": "c3",
+      "name": "Flash Friday",
+      "channel": "SMS",
+      "status": "Draft",
+      "budget_pkr": 8000,
+      "spend_pkr": 0,
+      "reach": "0",
+      "ctr_percent": 0,
+      "conversions": 0,
+      "revenue_attributed_pkr": 0,
+      "roi_percent": 0,
+      "recommendation": "Activate immediately for Leather Jacket stockout emergency — high urgency push"
+    }
+  ],
+  "overall": {
+    "total_spend_pkr": 16600,
+    "total_revenue_pkr": 42800,
+    "blended_roi": 157.8,
+    "best_channel": "Email",
+    "recommended_action": "Launch multi-channel push notification campaign targeting Wishlist Customers for limited stock alert"
+  }
+}

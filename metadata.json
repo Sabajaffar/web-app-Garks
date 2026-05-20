@@ -1,0 +1,6 @@
+{
+  "name": "GarKS - Premium Style",
+  "description": "A premium garment store with AI-powered insights, intelligent recommendations, and professional admin dashboards. Style. Smart. Simple.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

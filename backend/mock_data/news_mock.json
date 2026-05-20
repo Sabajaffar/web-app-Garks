@@ -1,0 +1,15 @@
+{
+  "source": "Pakistan Logistics News",
+  "url": "https://example.com/logistics/highway-n55-closure",
+  "published": "2024-01-19T14:30:00Z",
+  "title": "Highway N-55 Closure Disrupts Karachi-Lahore Supply Chain",
+  "content": "KARACHI — A major accident on Highway N-55 has caused significant delays in freight transport between Karachi port and Lahore distribution centers. The closure began on January 18 and is expected to last until January 25. Logistics companies report 18-35 hour delays in standard delivery timelines. Premium fashion retailers including those importing Italian leather goods are particularly affected. Transport costs have increased by 22% due to alternate routing. Supply chain analysts recommend emergency restocking via air freight for high-demand items, though this carries a 40% cost premium. Multiple garment suppliers in the Karachi SITE area have been unable to dispatch pending orders.",
+  "tags": ["logistics", "supply chain", "highway", "delay", "transport", "Pakistan", "fashion", "retail"],
+  "credibility": 0.78,
+  "impact_assessment": {
+    "severity": "HIGH",
+    "affected_industries": ["Fashion", "Garments", "Leather Goods"],
+    "estimated_delay_hours": 18,
+    "recommended_action": "Place emergency reorder before Jan 22 to avoid stockout beyond 1 week"
+  }
+}

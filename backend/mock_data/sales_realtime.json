@@ -1,0 +1,65 @@
+{
+  "report_date": "2024-01-20",
+  "report_type": "7-day rolling sales",
+  "currency": "PKR",
+  "products": [
+    {
+      "sku": "JK-LE-003",
+      "name": "Biker Leather Jacket",
+      "category": "Leather Jackets",
+      "daily_sales": [12, 12, 12, 12, 12, 12, 12],
+      "total_7d": 84,
+      "avg_daily": 12.0,
+      "revenue_7d_pkr": 73500,
+      "trend": "STABLE_HIGH",
+      "stockout_risk": "CRITICAL",
+      "comment": "Selling 12 units/day for 7 days. If warehouse CSV shows 80 units, actual stock is DEPLETED."
+    },
+    {
+      "sku": "SH-OX-001",
+      "name": "Premium Oxford Shirt",
+      "category": "Shirts",
+      "daily_sales": [3, 2, 4, 3, 2, 3, 3],
+      "total_7d": 20,
+      "avg_daily": 2.86,
+      "revenue_7d_pkr": 7225,
+      "trend": "STABLE",
+      "stockout_risk": "LOW"
+    },
+    {
+      "sku": "PL-PI-005",
+      "name": "Classic Pique Polo",
+      "category": "Polo Shirts",
+      "daily_sales": [2, 1, 2, 2, 1, 1, 2],
+      "total_7d": 11,
+      "avg_daily": 1.57,
+      "revenue_7d_pkr": 2552,
+      "trend": "STABLE_LOW",
+      "stockout_risk": "HIGH"
+    },
+    {
+      "sku": "SW-CS-009",
+      "name": "Cashmere Sweater",
+      "daily_sales": [0, 0, 0, 0, 0, 0, 0],
+      "total_7d": 0,
+      "avg_daily": 0,
+      "revenue_7d_pkr": 0,
+      "trend": "OUT_OF_STOCK",
+      "stockout_risk": "CRITICAL",
+      "comment": "Zero stock — no sales possible. Lost revenue estimated PKR 21,000."
+    }
+  ],
+  "revenue_summary": {
+    "total_7d_pkr": 83277,
+    "avg_daily_pkr": 11896,
+    "top_seller": "Biker Leather Jacket",
+    "revenue_change_vs_prev_week_pct": -14.2,
+    "suggested_discount": 15,
+    "suggested_duration_hours": 6
+  },
+  "logistics": {
+    "highway_n55_delay_hours": 18,
+    "affected_suppliers": ["Tuscan Leather S.p.A", "Milan Fabrics Co."],
+    "delivery_eta_change": "+2 days"
+  }
+}

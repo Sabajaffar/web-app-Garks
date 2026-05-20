@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:ANDROID_HOME = \"C:\\\\Users\\\\VS-Asset\\\\AppData\\\\Local\\\\Android\\\\Sdk\"; $env:PATH += \";$env:ANDROID_HOME\\\\platform-tools;$env:ANDROID_HOME\\\\emulator\"; Start-Process -FilePath \"$env:ANDROID_HOME\\\\emulator\\\\emulator.exe\" -ArgumentList \"-avd Pixel_7_Pro -no-snapshot-load\" -WindowStyle Normal; Write-Output \"Emulator starting with no snapshot...\")"
+    ]
+  }
+}

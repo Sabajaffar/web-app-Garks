@@ -1,0 +1,52 @@
+{
+  "report_type": "Supplier Reliability Report",
+  "generated": "2024-01-20T08:00:00Z",
+  "suppliers": [
+    {
+      "id": "s5",
+      "name": "Tuscan Leather S.p.A",
+      "country": "Italy",
+      "reliability_score": 0.94,
+      "avg_delivery_days": 7,
+      "current_delivery_days": 9,
+      "delay_reason": "Highway N-55 blockage affecting outbound logistics from Florence",
+      "stock_available": {
+        "JK-LE-003": 200,
+        "BL-SI-006": 150
+      },
+      "unit_price_pkr": {
+        "JK-LE-003": 600,
+        "partial_order_min_pkr": 30000,
+        "full_order_pkr": 75000
+      },
+      "contact": "enzo@tuscanleather.it",
+      "notes": "Priority supplier for leather goods. 5% emergency surcharge for orders under PKR 50,000."
+    },
+    {
+      "id": "s1",
+      "name": "Milan Fabrics Co.",
+      "country": "Italy",
+      "reliability_score": 0.88,
+      "avg_delivery_days": 10,
+      "current_delivery_days": 12,
+      "delay_reason": "High demand season — processing backlog of 3 days",
+      "stock_available": {
+        "SH-OX-001": 500,
+        "PN-CH-002": 400,
+        "HD-FL-004": 300
+      },
+      "unit_price_pkr": {
+        "SH-OX-001": 45,
+        "PN-CH-002": 38,
+        "full_order_pkr": 45000
+      },
+      "contact": "marco@milanfabrics.it",
+      "notes": "Standard 30-day payment terms. Bulk discount 8% above PKR 40,000."
+    }
+  ],
+  "alerts": [
+    "Highway N-55 closure reducing delivery capacity by 35% until Jan 25",
+    "Tuscan Leather S.p.A: PKR 75,000 full reorder exceeds GarKS budget limit of PKR 50,000",
+    "Recommend partial emergency reorder PKR 48,000 (80 units) from Tuscan Leather"
+  ]
+}
