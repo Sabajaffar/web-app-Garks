@@ -21,7 +21,11 @@
     },
     "production": {
       "android": {
+<<<<<<< HEAD
         "buildType": "app-bundle"
+=======
+        "buildType": "aab"
+>>>>>>> 4643d9b29c5e3cb37083057970eb12338e563220
       }
     }
   },

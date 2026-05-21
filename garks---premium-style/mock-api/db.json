@@ -1,0 +1,929 @@
+{
+  "warehouse": [
+    {
+      "id": "1",
+      "name": "Minimalist Charcoal Linen Kurta",
+      "stock": 96,
+      "status": "sufficient",
+      "timestamp": "2026-05-11T09:00:00",
+      "stale": true,
+      "type": "structured"
+    },
+    {
+      "id": "2",
+      "name": "Oversized Pastel Linen Co-Ord Set",
+      "stock": 104,
+      "status": "sufficient",
+      "timestamp": "2026-05-11T09:00:00",
+      "stale": true,
+      "type": "structured"
+    },
+    {
+      "id": "3",
+      "name": "Signature Emerald Green 2-Piece",
+      "stock": 46,
+      "status": "sufficient",
+      "timestamp": "2026-05-11T09:00:00",
+      "stale": true,
+      "type": "structured"
+    },
+    {
+      "id": "4",
+      "name": "Oversized Minimalist Off-White Tee",
+      "stock": 75,
+      "status": "sufficient",
+      "timestamp": "2026-05-11T09:00:00",
+      "stale": true,
+      "type": "structured"
+    },
+    {
+      "id": "5",
+      "name": "Monochrome Jet Black Summer Tunic",
+      "stock": 65,
+      "status": "sufficient",
+      "timestamp": "2026-05-11T09:00:00",
+      "stale": true,
+      "type": "structured"
+    },
+    {
+      "id": "6",
+      "name": "Structured Slate Grey Shalwar Kameez",
+      "stock": 12,
+      "status": "sufficient",
+      "timestamp": "2026-05-11T09:00:00",
+      "stale": true,
+      "type": "structured"
+    }
+  ],
+  "supplier_email": {
+    "id": 1,
+    "type": "semi-structured",
+    "timestamp": "2026-05-14T14:30:00",
+    "stale": false,
+    "from": "faisalabad_procurement@textilehub.pk",
+    "subject": "URGENT: Stock Alert — Premium Linen & Lawn Yarn",
+    "body": "Due to N-55 highway transport disruption and logistics shutdown, current raw fabric inventory will run out in approximately 2 days. Minimalist Charcoal Kurta and Pastel Linen Co-Ord fabric critically affected. Recommend immediate emergency yarn reorder. Our processing lead time: 48 hours."
+  },
+  "sales_dashboard": {
+    "id": 1,
+    "type": "structured",
+    "timestamp": "2026-05-14T18:00:00",
+    "stale": false,
+    "weekly_revenue_change": 538,
+    "daily_orders": [
+      45,
+      38,
+      29,
+      22,
+      18,
+      15,
+      12
+    ],
+    "total_revenue_today": 1272575,
+    "top_complaints": [
+      "Charcoal Linen Kurta out of stock",
+      "Pastel Co-Ord Set unavailable in Medium",
+      "When will premium summer wear restock?"
+    ],
+    "conversion_rate": 1.4,
+    "cart_abandonment": 72
+  },
+  "customer_reviews": {
+    "id": 1,
+    "type": "unstructured",
+    "timestamp": "2026-05-14T17:00:00",
+    "stale": false,
+    "total_today": 1734,
+    "negative": 716,
+    "positive": 1018,
+    "themes": [
+      "apparel stock unavailability",
+      "logistics delays",
+      "sizing stock concerns"
+    ],
+    "raw_text": "Tried to buy the Minimalist Charcoal Kurta 3 times today. Always sold out online! Switching to alternative brand. Worst stock management. Pastel Co-Ord set is also never available in Medium size. Extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nOmar F.: Top quality materials as always. Highly recommend.\nHassan A.: Absolutely love the fit of the kurta!\nOmar F.: Top quality materials as always. Highly recommend.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nHassan A.: Absolutely love the fit of the kurta!\nZainab M.: Emerald green 2-piece out of stock in M, extremely disappointed.\nFatima S.: Co-Ord Set is lovely but a bit oversized.\nAyesha K.: Good fabric, but delivery was slightly delayed.\nOmar F.: Top quality materials as always. Highly recommend."
+  },
+  "news_feed": {
+    "id": 1,
+    "type": "semi-structured",
+    "timestamp": "2026-05-14T12:00:00",
+    "headline": "N-55 Highway Blocked: Textile Logistics Face Severe Delays Across Sindh",
+    "body": "Transport authorities confirm major cargo blockage on N-55 highway affecting goods movement. Raw fabric, yarn, and ready-made garments shipments face 3-5 day delays. Multiple Faisalabad mills have issued critical operational warnings.",
+    "credibility_score": 0.9,
+    "impact": "Textile, apparel deliveries, and local production units most affected"
+  },
+  "products": [
+    {
+      "id": "m1",
+      "name": "Premium Oxford Shirt",
+      "price": 85,
+      "originalPrice": null,
+      "category": "Shirts",
+      "sku": "SH-OX-001",
+      "stock": 101,
+      "sales": 140,
+      "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80",
+      "description": "Handcrafted from fine Egyptian cotton. Features a semi-spread collar and reinforced seams for a sharp, executive silhouette.",
+      "onSale": false,
+      "discount": 0,
+      "reviews": [
+        {
+          "user": "Ali K.",
+          "rating": 5,
+          "comment": "Perfect fit and amazing fabric quality!"
+        },
+        {
+          "user": "Zain M.",
+          "rating": 4,
+          "comment": "Very breathable for hot climates."
+        }
+      ],
+      "saleActive": false,
+      "saleEndTime": null
+    },
+    {
+      "id": "m2",
+      "name": "Slim Fit Chinos",
+      "price": 75,
+      "originalPrice": null,
+      "category": "Pants",
+      "sku": "PN-CH-002",
+      "stock": 105,
+      "sales": 95,
+      "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&q=80",
+      "description": "Perfect balance of comfort and style. Engineered with a slight stretch for active movements.",
+      "onSale": false,
+      "discount": 0,
+      "reviews": [
+        {
+          "user": "Sara T.",
+          "rating": 5,
+          "comment": "Love the fitting and fabric!"
+        }
+      ],
+      "saleActive": false,
+      "saleEndTime": null
+    },
+    {
+      "id": "m3",
+      "name": "Biker Leather Jacket",
+      "price": 295,
+      "originalPrice": null,
+      "category": "Leather Jackets",
+      "sku": "JK-LE-003",
+      "stock": 18,
+      "sales": 210,
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80",
+      "description": "Grained lambskin leather with premium metallic hardware. A bold statement piece designed to age beautifully over time.",
+      "onSale": false,
+      "discount": 0,
+      "reviews": [
+        {
+          "user": "Fatima R.",
+          "rating": 5,
+          "comment": "The leather is exceptionally premium!"
+        }
+      ],
+      "saleActive": false,
+      "saleEndTime": null
+    },
+    {
+      "id": "m4",
+      "name": "Tech Fleece Hoodie",
+      "price": 95,
+      "originalPrice": null,
+      "category": "Hoodies",
+      "sku": "HD-FL-004",
+      "stock": 71,
+      "sales": 88,
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80",
+      "description": "Heavyweight premium cotton-poly blend styled with futuristic minimalist paneling.",
+      "onSale": false,
+      "discount": 0,
+      "reviews": [
+        {
+          "user": "Umer D.",
+          "rating": 5,
+          "comment": "Heavyweight material is incredible."
+        }
+      ],
+      "saleActive": false,
+      "saleEndTime": null
+    },
+    {
+      "id": "m5",
+      "name": "Classic Pique Polo",
+      "price": 55,
+      "originalPrice": null,
+      "category": "Polos",
+      "sku": "PL-PI-005",
+      "stock": 43,
+      "sales": 45,
+      "image": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80",
+      "description": "Refined classic pique polo shirt for summer luxury and ultimate elegance.",
+      "onSale": false,
+      "discount": 0,
+      "reviews": [
+        {
+          "user": "Kamran F.",
+          "rating": 5,
+          "comment": "Solid addition to my summer wardrobe."
+        }
+      ],
+      "saleActive": false,
+      "saleEndTime": null
+    },
+    {
+      "id": "w1",
+      "name": "Silk Blouse",
+      "price": 120,
+      "originalPrice": null,
+      "category": "Blouses",
+      "sku": "BL-SI-006",
+      "stock": 94,
+      "sales": 64,
+      "image": "https://images.unsplash.com/photo-1548624149-f7b31603043f?auto=format&fit=crop&q=80",
+      "description": "Pure mulberry silk blouse with an elegant fluid drape and soft satin finish.",
+      "onSale": false,
+      "discount": 0,
+      "reviews": [
+        {
+          "user": "Mehak Q.",
+          "rating": 5,
+          "comment": "Simply stunning fabric weight."
+        }
+      ],
+      "saleActive": false,
+      "saleEndTime": null
+    }
+  ],
+  "store_state": {
+    "id": 1,
+    "saleActive": false,
+    "saleDiscount": 0,
+    "saleEndTime": null,
+    "stockoutRisk": "HIGH",
+    "revenueChange": -45,
+    "emergencyOrderPlaced": false,
+    "lastAgentRun": "",
+    "flash_sale_active": false,
+    "flash_sale_discount": 0
+  },
+  "agent_logs": [
+    {
+      "timestamp": "2026-05-16T12:36:32.567Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "Wbq-FdoBrL0"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:32.616Z",
+      "step": "FETCH_SOURCES",
+      "message": "Fetching all 5 data sources",
+      "id": "i554fXQz-Jw"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:32.652Z",
+      "step": "AI_ANALYSIS",
+      "message": "Sending data to Groq for analysis",
+      "id": "FgCprwEyHjc"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:34.213Z",
+      "step": 1,
+      "action": "Cross-reference inventory",
+      "status": "SUCCESS",
+      "id": "-FlNNBkQh_4"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:35.041Z",
+      "step": 2,
+      "action": "Email Supplier",
+      "status": "FAILED",
+      "reason": "SMTP server unreachable",
+      "id": "9PPKQ2Kr-X4"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:36.073Z",
+      "step": 2.1,
+      "action": "SMS Supplier (Fallback)",
+      "status": "SUCCESS",
+      "id": "fH38fxIfJKw"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:36.905Z",
+      "step": 3,
+      "action": "Supplier Negotiation",
+      "status": "SUCCESS",
+      "id": "LUJXHak-HXw"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:37.736Z",
+      "step": 4,
+      "action": "System Update",
+      "status": "SUCCESS",
+      "id": "Hxb8rMv8Y_4"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:38.594Z",
+      "step": 5,
+      "action": "Launch Flash Sale",
+      "status": "SUCCESS",
+      "discount": 20,
+      "id": "acoX5RhwNwU"
+    },
+    {
+      "timestamp": "2026-05-16T12:36:39.413Z",
+      "step": "COMPLETE",
+      "message": "ShopAgent automated workflow completed",
+      "id": "8whvV7_U2T8"
+    },
+    {
+      "timestamp": "2026-05-16T12:53:53.750Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "EjsPyRHKrjY"
+    },
+    {
+      "timestamp": "2026-05-16T12:54:30.835Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 10,
+      "duration": 1,
+      "id": "Ta0sy1Nb_D4"
+    },
+    {
+      "timestamp": "2026-05-16T12:59:49.280Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "dpaXD34fhTI"
+    },
+    {
+      "timestamp": "2026-05-16T13:00:16.912Z",
+      "step": "ACTION_5_REJECTED",
+      "message": "Admin rejected flash sale",
+      "id": "lQl_h8Ly37s"
+    },
+    {
+      "timestamp": "2026-05-16T13:00:20.692Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "bTAlF5xJxiA"
+    },
+    {
+      "timestamp": "2026-05-16T13:00:36.512Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 60,
+      "duration": 2,
+      "id": "3rQJuBLnFBQ"
+    },
+    {
+      "timestamp": "2026-05-16T15:42:35.547Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "3Vx2rnAcAQA"
+    },
+    {
+      "timestamp": "2026-05-16T15:42:51.834Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 20,
+      "duration": 2,
+      "id": "IeO9iAK-9Ok"
+    },
+    {
+      "timestamp": "2026-05-16T15:42:51.880Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "fP1NIudbc_s"
+    },
+    {
+      "timestamp": "2026-05-16T15:42:51.911Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "5BaFl9X91_w"
+    },
+    {
+      "timestamp": "2026-05-16T15:54:21.948Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "TWHUYblanl8"
+    },
+    {
+      "timestamp": "2026-05-16T15:54:42.284Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 50,
+      "duration": 1,
+      "id": "13BiAKQ-z58"
+    },
+    {
+      "timestamp": "2026-05-16T15:54:42.313Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "6e2b6Z8WAeA"
+    },
+    {
+      "timestamp": "2026-05-16T15:54:42.334Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "8YWargaVWMY"
+    },
+    {
+      "timestamp": "2026-05-16T16:09:30.449Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "T815o7KK11U"
+    },
+    {
+      "timestamp": "2026-05-16T16:09:42.211Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 17,
+      "duration": 2,
+      "id": "3P-NVHHQ2XY"
+    },
+    {
+      "timestamp": "2026-05-16T16:09:42.236Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "xOq3mmQdo_w"
+    },
+    {
+      "timestamp": "2026-05-16T16:09:42.255Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "z1OUzwlDR8Q"
+    },
+    {
+      "timestamp": "2026-05-16T16:21:05.518Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "P4X7g8Z1MZk"
+    },
+    {
+      "timestamp": "2026-05-16T16:21:12.509Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 20,
+      "duration": 2,
+      "id": "X3hgZnCAAAI"
+    },
+    {
+      "timestamp": "2026-05-16T16:21:12.525Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "KxXVLeg8a04"
+    },
+    {
+      "timestamp": "2026-05-16T16:21:12.539Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "dRGMvBi02os"
+    },
+    {
+      "timestamp": "2026-05-16T16:25:09.543Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "08XjZxxUTVI"
+    },
+    {
+      "timestamp": "2026-05-16T16:35:57.001Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "Qbx-CoNL2bo"
+    },
+    {
+      "timestamp": "2026-05-16T16:37:51.509Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "Wre6GgDeIvQ"
+    },
+    {
+      "timestamp": "2026-05-16T16:38:01.158Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 20,
+      "duration": 2,
+      "id": "Td1yazhDgyg"
+    },
+    {
+      "timestamp": "2026-05-16T16:38:01.221Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "xBgIzAJ8NYQ"
+    },
+    {
+      "timestamp": "2026-05-16T16:38:01.252Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "8p6C69Vun48"
+    },
+    {
+      "timestamp": "2026-05-16T17:01:12.576Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "SvdT43EZ_-Q"
+    },
+    {
+      "timestamp": "2026-05-16T17:01:20.775Z",
+      "step": "ACTION_5_REJECTED",
+      "message": "Admin rejected flash sale",
+      "id": "B7-guOTAGSw"
+    },
+    {
+      "timestamp": "2026-05-16T17:01:24.174Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "KW1r3Al_O-A"
+    },
+    {
+      "timestamp": "2026-05-16T17:01:30.456Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 20,
+      "duration": 2,
+      "id": "CundqgRBYME"
+    },
+    {
+      "timestamp": "2026-05-16T17:01:30.465Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "7P71ZaKVh-g"
+    },
+    {
+      "timestamp": "2026-05-16T17:01:30.473Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "hzGVevLRnIs"
+    },
+    {
+      "timestamp": "2026-05-16T17:05:13.433Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "-FgtizK-ZDM"
+    },
+    {
+      "timestamp": "2026-05-16T17:05:34.643Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 20,
+      "duration": 2,
+      "id": "De6Y9MkL8I4"
+    },
+    {
+      "timestamp": "2026-05-16T17:05:34.901Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "pR2_eqDEeEc"
+    },
+    {
+      "timestamp": "2026-05-16T17:05:34.924Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "YtvfGwK1lIo"
+    },
+    {
+      "timestamp": "2026-05-16T17:29:14.668Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "AFL8wn9yIYQ"
+    },
+    {
+      "timestamp": "2026-05-16T17:29:29.739Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 10,
+      "duration": 2,
+      "id": "JObVDzpvXfE"
+    },
+    {
+      "timestamp": "2026-05-16T17:29:29.751Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "KGMvNHn2AoM"
+    },
+    {
+      "timestamp": "2026-05-16T17:29:29.759Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "Zzt3jOiUU10"
+    },
+    {
+      "timestamp": "2026-05-16T17:29:44.335Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "oXVby4GKPiI"
+    },
+    {
+      "timestamp": "2026-05-16T17:29:55.809Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 20,
+      "duration": 2,
+      "id": "vwPFtl46If8"
+    },
+    {
+      "timestamp": "2026-05-16T17:29:55.819Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "Cp9xvJfHIiw"
+    },
+    {
+      "timestamp": "2026-05-16T17:29:55.827Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "F-BZOUA5k4o"
+    },
+    {
+      "timestamp": "2026-05-16T17:37:55.044Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "GwHXPeAW1NE"
+    },
+    {
+      "timestamp": "2026-05-16T17:38:12.790Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 80,
+      "duration": 1,
+      "id": "C3txufLAbpY"
+    },
+    {
+      "timestamp": "2026-05-16T17:38:12.803Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "dbytSf1b1KA"
+    },
+    {
+      "timestamp": "2026-05-16T17:38:12.810Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "pu2apojik04"
+    },
+    {
+      "timestamp": "2026-05-16T18:30:46.550Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "PU1YvW1KQ6Y"
+    },
+    {
+      "timestamp": "2026-05-16T18:30:58.430Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 20,
+      "id": "dOHRtwbQcLI"
+    },
+    {
+      "timestamp": "2026-05-16T18:30:58.451Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "0PorsNYsi0Y"
+    },
+    {
+      "timestamp": "2026-05-17T16:03:09.629Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "_nV4sDzAuw0"
+    },
+    {
+      "timestamp": "2026-05-17T16:03:31.296Z",
+      "step": "ACTION_5_REJECTED",
+      "message": "Admin rejected flash sale",
+      "id": "5RcQbrKsvqA"
+    },
+    {
+      "timestamp": "2026-05-17T16:03:37.903Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "_lZLhJMIGTs"
+    },
+    {
+      "timestamp": "2026-05-17T16:04:01.693Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 90,
+      "id": "HuZTnwApYdk"
+    },
+    {
+      "timestamp": "2026-05-17T16:04:01.712Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "mDKTRZu6ORE"
+    },
+    {
+      "timestamp": "2026-05-17T16:04:01.735Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "UIZ3bWqwYSQ"
+    },
+    {
+      "timestamp": "2026-05-17T16:06:34.934Z",
+      "step": "START",
+      "message": "Starting ShopAgent automated workflow",
+      "id": "bINX0MZEozE"
+    },
+    {
+      "timestamp": "2026-05-17T16:06:44.886Z",
+      "step": "ACTION_5_APPROVED",
+      "discount": 20,
+      "id": "CImBhJsN1Ww"
+    },
+    {
+      "timestamp": "2026-05-17T16:06:44.903Z",
+      "step": "NOTIFY",
+      "message": "Email notification sent to admin",
+      "id": "8JJ9MMiYm7A"
+    },
+    {
+      "timestamp": "2026-05-17T16:06:44.924Z",
+      "step": "NOTIFY",
+      "message": "Browser notification dispatched",
+      "id": "ikT1cVGPhAY"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T11:08:23.400Z",
+      "discount": 23,
+      "timestamp": "2026-05-19T11:08:23.400Z",
+      "id": "65Bb5-Zn8qg"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T14:31:19.802Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T11:31:19.802Z",
+      "id": "r_mXmSoxII0"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T14:32:20.600Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T11:32:20.600Z",
+      "id": "wpeOcCEc__s"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T15:01:42.005Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T12:01:42.005Z",
+      "id": "icqxZ3ZuNWo"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T14:01:49.716Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T12:01:49.716Z",
+      "id": "LMXlYiWNFoI"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T14:03:16.665Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T12:03:16.665Z",
+      "id": "-HvhUVTh6Z4"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T15:22:27.783Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T13:22:27.783Z",
+      "id": "dC4t0n9JWis"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T15:29:00.836Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T13:29:00.836Z",
+      "id": "fPHcNdlj6IY"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T15:32:16.962Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T13:32:16.962Z",
+      "id": "Ql8h1yMck_I"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T15:32:35.616Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T13:32:35.616Z",
+      "id": "jdDBa6mvAmk"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T15:34:37.885Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T13:34:37.885Z",
+      "id": "5WD0MdoZbZ0"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T15:44:53.331Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T13:44:53.332Z",
+      "id": "Y83MdcKn47c"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T15:59:39.425Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T13:59:39.425Z",
+      "id": "B1EcAXiP20k"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T16:26:36.938Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T14:26:36.938Z",
+      "id": "FA02flii_Og"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T16:27:06.801Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T14:27:06.802Z",
+      "id": "4CwvUGxz1Ak"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T16:27:30.370Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T14:27:30.370Z",
+      "id": "lNlwSaLttFE"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T16:58:22.837Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T14:58:22.837Z",
+      "id": "4fp8M_bgQ7A"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T17:01:03.347Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T15:01:03.347Z",
+      "id": "VIO6QKb8cCE"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T19:27:53.079Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T17:27:53.079Z",
+      "id": "6mls8uCf1_A"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T19:30:00.157Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T17:30:00.157Z",
+      "id": "uYPg4UTc8P4"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T19:37:53.892Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T17:37:53.892Z",
+      "id": "h1Hh-T0jf9s"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T19:51:27.291Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T17:51:27.291Z",
+      "id": "vSqsYsDntEc"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T19:51:33.514Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T17:51:33.514Z",
+      "id": "NpAfyptk7RU"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T19:58:05.084Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T17:58:05.084Z",
+      "id": "qUQq_JGZQ0c"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T19:58:24.100Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T17:58:24.100Z",
+      "id": "M5VJfDVfDxQ"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T20:10:42.205Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T18:10:42.205Z",
+      "id": "F7wWm6XV7XQ"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T20:11:21.689Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T18:11:21.689Z",
+      "id": "PMk2uHWr-A0"
+    },
+    {
+      "action": "monitoring_started",
+      "saleEndTime": "2026-05-19T20:31:18.031Z",
+      "discount": 20,
+      "timestamp": "2026-05-19T18:31:18.032Z",
+      "id": "6-P2fSTqVWk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

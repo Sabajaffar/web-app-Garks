@@ -17,7 +17,11 @@ import { DMSans_400Regular, DMSans_500Medium, DMSans_700Bold } from '@expo-googl
 import { IBMPlexMono_400Regular } from '@expo-google-fonts/ibm-plex-mono';
 
 import { useStore } from './src/store/useStore';
+<<<<<<< HEAD
 import { COLORS, setThemeColors } from './src/theme';
+=======
+import { COLORS } from './src/theme';
+>>>>>>> 4643d9b29c5e3cb37083057970eb12338e563220
 
 import Splash from './src/pages/Splash';
 import Login from './src/pages/Login';
@@ -58,8 +62,12 @@ function ToastOverlay() {
 }
 
 export default function App() {
+<<<<<<< HEAD
   const { isLoggedIn, mode, theme } = useStore();
   setThemeColors(theme);
+=======
+  const { isLoggedIn, mode } = useStore();
+>>>>>>> 4643d9b29c5e3cb37083057970eb12338e563220
 
   const [fontsLoaded] = useFonts({
     PlayfairDisplay_700Bold,
@@ -86,7 +94,11 @@ export default function App() {
   }
 
   return (
+<<<<<<< HEAD
     <GestureHandlerRootView key={theme} style={{ flex: 1 }}>
+=======
+    <GestureHandlerRootView style={{ flex: 1 }}>
+>>>>>>> 4643d9b29c5e3cb37083057970eb12338e563220
       <SafeAreaProvider>
         <NavigationContainer>
           <StatusBar style="light" backgroundColor={COLORS.bg} />

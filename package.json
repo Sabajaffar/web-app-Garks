@@ -37,9 +37,12 @@
     "lucide-react-native": "^0.475.0",
     "@emailjs/browser": "^4.4.1",
     "@google/genai": "^2.4.0",
+<<<<<<< HEAD
     "expo-av": "~15.0.0",
     "expo-speech": "~13.0.0",
     "expo-document-picker": "~13.0.0",
+=======
+>>>>>>> 4643d9b29c5e3cb37083057970eb12338e563220
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "tsx": "^4.7.1"
@@ -47,7 +50,11 @@
   "expo": {
     "doctor": {
       "reactNativeDirectoryCheck": {
+<<<<<<< HEAD
         "exclude": ["react-native-chart-kit", "@emailjs/browser", "dotenv", "express", "tsx", "@google/genai", "expo-av", "expo-speech", "expo-document-picker"],
+=======
+        "exclude": ["react-native-chart-kit", "@emailjs/browser", "dotenv", "express", "tsx", "@google/genai"],
+>>>>>>> 4643d9b29c5e3cb37083057970eb12338e563220
         "listUnknownPackages": false
       }
     }
