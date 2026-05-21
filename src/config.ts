@@ -1,7 +1,7 @@
 // Railway production URL — replace YOUR_APP with your actual Railway subdomain
 // e.g. https://garks-backend-production.up.railway.app
-export const API_BASE = 'https://YOUR_APP.up.railway.app';
-export const MOCK_API_BASE = 'https://YOUR_APP.up.railway.app';
+export const API_BASE = 'https://web-app-garks-production.up.railway.app';
+export const MOCK_API_BASE = 'https://web-app-garks-production.up.railway.app';
 
 // Gemini API key — set via .env or replace directly for testing
 export const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
