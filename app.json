@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#0a1428"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.garks.app"
@@ -29,7 +31,8 @@
         "INTERNET",
         "CAMERA",
         "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
+        "WRITE_EXTERNAL_STORAGE",
+        "RECORD_AUDIO"
       ]
     },
     "web": {
@@ -41,8 +44,9 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "your-eas-project-id-here"
+        "projectId": "bcd40cea-0824-43a5-a6d1-b8af95f703f0"
       }
-    }
+    },
+    "owner": "kulsoomsaeed"
   }
 }

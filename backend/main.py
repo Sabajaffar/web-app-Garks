@@ -335,6 +335,51 @@ async def gargi_chat(req: ChatRequest):
         return {"text": "I'm momentarily unavailable. Please try again in a moment."}
 
 
+# ─────────────────────── Voice Transcription ─────────────────────────────────
+
+@app.post("/api/voice/transcribe")
+async def voice_transcribe(file: UploadFile = File(...)):
+    """
+    Transcribe voice audio to text using Gemini.
+    Accepts audio/m4a, audio/wav, audio/mp4 etc.
+    """
+    import os
+    content = await file.read()
+
+    if not content:
+        return {"text": "", "error": "Empty audio file"}
+
+    api_key = os.getenv("GEMINI_API_KEY", "")
+    if not api_key:
+        logger.warning("Voice transcription called but GEMINI_API_KEY not set — returning empty")
+        return {"text": "", "mock": True, "message": "Set GEMINI_API_KEY on Railway to enable voice transcription"}
+
+    try:
+        from services.gemini_client import _get_client
+        import base64
+        from google.genai import types as genai_types
+
+        client = _get_client()
+        mime = file.content_type or "audio/m4a"
+
+        response = client.models.generate_content(
+            model="gemini-1.5-pro",
+            contents=[
+                genai_types.Part(
+                    inline_data=genai_types.Blob(mime_type=mime, data=content)
+                ),
+                "Transcribe this audio exactly as spoken. Return ONLY the transcribed text, nothing else.",
+            ],
+            config=genai_types.GenerateContentConfig(temperature=0.1, max_output_tokens=512),
+        )
+        transcribed = (response.text or "").strip()
+        logger.info("Voice transcribed: %s chars", len(transcribed))
+        return {"text": transcribed}
+    except Exception as exc:
+        logger.error("Voice transcription error: %s", exc)
+        return {"text": "", "error": str(exc)}
+
+
 # ─────────────────────── Dashboard ───────────────────────────────────────────
 
 @app.get("/dashboard")

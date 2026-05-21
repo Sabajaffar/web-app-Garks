@@ -46,6 +46,34 @@ export default function Suppliers() {
         </TouchableOpacity>
       </View>
 
+      {/* Horizontal vendors bar */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.vendorsBarWrap}
+        contentContainerStyle={styles.vendorsBarContent}
+      >
+        {suppliers.map(s => {
+          const color = CATEGORY_COLORS[s.category] || COLORS.muted;
+          return (
+            <View key={s.id} style={[styles.vendorChip, { borderColor: `${color}35` }]}>
+              <View style={[styles.vendorChipAvatar, { backgroundColor: `${color}20` }]}>
+                <Text style={[styles.vendorChipInitial, { color }]}>{s.company[0]}</Text>
+              </View>
+              <View style={styles.vendorChipInfo}>
+                <Text style={styles.vendorChipName} numberOfLines={1}>{s.company}</Text>
+                <View style={styles.vendorChipMeta}>
+                  <Star size={8} color={COLORS.secondary} fill={COLORS.secondary} />
+                  <Text style={styles.vendorChipRating}>{s.rating.toFixed(1)}</Text>
+                  <View style={styles.vendorActiveDot} />
+                  <Text style={styles.vendorActiveText}>Active</Text>
+                </View>
+              </View>
+            </View>
+          );
+        })}
+      </ScrollView>
+
       <View style={styles.searchWrap}>
         <Search size={16} color={COLORS.muted} />
         <TextInput style={styles.searchInput} placeholder="Search suppliers..." placeholderTextColor={COLORS.muted} value={search} onChangeText={setSearch} />
@@ -111,25 +139,63 @@ export default function Suppliers() {
       <Modal visible={showAddModal} animationType="slide" transparent>
         <View style={styles.modalOverlay}>
           <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>Add Supplier</Text>
-            <ScrollView showsVerticalScrollIndicator={false} style={{ maxHeight: 380 }}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Add Supplier</Text>
+              <TouchableOpacity onPress={() => setShowAddModal(false)} style={styles.modalCloseBtn} activeOpacity={0.7}>
+                <Text style={styles.modalCloseTxt}>✕</Text>
+              </TouchableOpacity>
+            </View>
+            <ScrollView showsVerticalScrollIndicator={false} style={{ maxHeight: 420 }}>
               {[
-                { key: 'name', label: 'Full Name' },
-                { key: 'company', label: 'Company Name' },
-                { key: 'contactPerson', label: 'Contact Person' },
-                { key: 'phone', label: 'Phone' },
-                { key: 'email', label: 'Email' },
-                { key: 'address', label: 'Address' },
+                { key: 'name', label: 'Full Name', placeholder: 'e.g. Ahmed Khan', keyboard: 'default' as const },
+                { key: 'company', label: 'Company Name', placeholder: 'e.g. Tuscan Leather S.p.A', keyboard: 'default' as const },
+                { key: 'contactPerson', label: 'Contact Person', placeholder: 'e.g. Sales Manager', keyboard: 'default' as const },
+                { key: 'phone', label: 'Phone Number', placeholder: 'e.g. +92-300-1234567', keyboard: 'phone-pad' as const },
+                { key: 'email', label: 'Email Address', placeholder: 'e.g. info@supplier.com', keyboard: 'email-address' as const },
+                { key: 'address', label: 'Address', placeholder: 'City, Country', keyboard: 'default' as const },
               ].map(f => (
                 <View key={f.key} style={styles.modalField}>
                   <Text style={styles.modalLabel}>{f.label}</Text>
-                  <TextInput style={styles.modalInput} placeholderTextColor={COLORS.muted} value={newSupplier[f.key as keyof typeof newSupplier]} onChangeText={v => setNewSupplier(p => ({ ...p, [f.key]: v }))} />
+                  <TextInput
+                    style={styles.modalInput}
+                    placeholder={f.placeholder}
+                    placeholderTextColor={`${COLORS.muted}55`}
+                    keyboardType={f.keyboard}
+                    autoCapitalize={f.keyboard === 'email-address' ? 'none' : 'words'}
+                    value={newSupplier[f.key as keyof typeof newSupplier]}
+                    onChangeText={v => setNewSupplier(p => ({ ...p, [f.key]: v }))}
+                  />
                 </View>
               ))}
+
+              {/* Category Picker */}
+              <View style={styles.modalField}>
+                <Text style={styles.modalLabel}>Category</Text>
+                <View style={styles.categoryPicker}>
+                  {['Fabric', 'Leather', 'Accessories'].map(cat => {
+                    const col = CATEGORY_COLORS[cat] || COLORS.muted;
+                    const active = newSupplier.category === cat;
+                    return (
+                      <TouchableOpacity
+                        key={cat}
+                        style={[styles.categoryOption, active && { backgroundColor: `${col}20`, borderColor: col }]}
+                        onPress={() => setNewSupplier(p => ({ ...p, category: cat }))}
+                        activeOpacity={0.8}
+                      >
+                        <Text style={[styles.categoryOptionText, { color: active ? col : COLORS.muted }]}>{cat}</Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
+              </View>
             </ScrollView>
             <View style={styles.modalActions}>
-              <TouchableOpacity style={styles.cancelBtn} onPress={() => setShowAddModal(false)} activeOpacity={0.7}><Text style={styles.cancelText}>Cancel</Text></TouchableOpacity>
-              <TouchableOpacity style={styles.confirmBtn} onPress={handleAdd} activeOpacity={0.85}><Text style={styles.confirmText}>Add Supplier</Text></TouchableOpacity>
+              <TouchableOpacity style={styles.cancelBtn} onPress={() => setShowAddModal(false)} activeOpacity={0.7}>
+                <Text style={styles.cancelText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.confirmBtn} onPress={handleAdd} activeOpacity={0.85}>
+                <Text style={styles.confirmText}>Add Supplier</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -166,13 +232,31 @@ const styles = StyleSheet.create({
   ratingBadgeText: { fontFamily: FONTS.mono, fontSize: 8, color: COLORS.success, textTransform: 'uppercase', letterSpacing: 1 },
   modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.75)', justifyContent: 'flex-end' },
   modalCard: { backgroundColor: COLORS.card, borderTopLeftRadius: RADIUS['3xl'], borderTopRightRadius: RADIUS['3xl'], padding: 28, gap: 18, borderTopWidth: 1, borderColor: `${COLORS.secondary}18` },
+  modalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   modalTitle: { fontFamily: FONTS.serif, fontSize: 26, color: COLORS.text, fontWeight: '700' },
-  modalField: { gap: 8, marginBottom: 12 },
-  modalLabel: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 2 },
+  modalCloseBtn: { width: 36, height: 36, borderRadius: 18, backgroundColor: `${COLORS.muted}18`, alignItems: 'center', justifyContent: 'center' },
+  modalCloseTxt: { fontFamily: FONTS.mono, fontSize: 12, color: COLORS.muted },
+  modalField: { gap: 8, marginBottom: 14 },
+  modalLabel: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.secondary, textTransform: 'uppercase', letterSpacing: 2 },
   modalInput: { backgroundColor: COLORS.bg, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)', borderRadius: RADIUS.lg, paddingHorizontal: 16, paddingVertical: 14, fontFamily: FONTS.sans, fontSize: 14, color: COLORS.text },
+  categoryPicker: { flexDirection: 'row', gap: 10 },
+  categoryOption: { flex: 1, paddingVertical: 12, borderRadius: RADIUS.lg, backgroundColor: COLORS.bg, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)', alignItems: 'center' },
+  categoryOptionText: { fontFamily: FONTS.sansBold, fontSize: 12 },
   modalActions: { flexDirection: 'row', gap: 12 },
   cancelBtn: { flex: 1, backgroundColor: COLORS.bg, borderRadius: RADIUS.xl, paddingVertical: 16, alignItems: 'center', borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)' },
   cancelText: { fontFamily: FONTS.sansBold, fontSize: 13, color: COLORS.muted },
   confirmBtn: { flex: 1, backgroundColor: COLORS.primary, borderRadius: RADIUS.xl, paddingVertical: 16, alignItems: 'center' },
   confirmText: { fontFamily: FONTS.sansBold, fontSize: 13, color: COLORS.bg },
+  // Vendors horizontal bar
+  vendorsBarWrap: { marginBottom: 4 },
+  vendorsBarContent: { paddingHorizontal: 20, gap: 10 },
+  vendorChip: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: COLORS.card, borderRadius: RADIUS.xl, paddingHorizontal: 14, paddingVertical: 10, borderWidth: 1, minWidth: 160 },
+  vendorChipAvatar: { width: 32, height: 32, borderRadius: 11, alignItems: 'center', justifyContent: 'center' },
+  vendorChipInitial: { fontFamily: FONTS.serif, fontSize: 14, fontWeight: '700' },
+  vendorChipInfo: { flex: 1 },
+  vendorChipName: { fontFamily: FONTS.sansBold, fontSize: 11, color: COLORS.text },
+  vendorChipMeta: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
+  vendorChipRating: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.secondary },
+  vendorActiveDot: { width: 4, height: 4, borderRadius: 2, backgroundColor: COLORS.success },
+  vendorActiveText: { fontFamily: FONTS.mono, fontSize: 8, color: COLORS.success, textTransform: 'uppercase', letterSpacing: 0.5 },
 });

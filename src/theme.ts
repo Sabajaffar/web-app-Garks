@@ -52,8 +52,8 @@ export function setThemeColors(theme: 'dark' | 'light' | 'premium-gold'): void {
 }
 
 export const FONTS = {
-  serif: 'Georgia',
-  serifItalic: 'Georgia',
+  serif: 'PlayfairDisplay_700Bold',
+  serifItalic: 'PlayfairDisplay_400Regular_Italic',
   sans: 'DMSans_400Regular',
   sansMedium: 'DMSans_500Medium',
   sansBold: 'DMSans_700Bold',

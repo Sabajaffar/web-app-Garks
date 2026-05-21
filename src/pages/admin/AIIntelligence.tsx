@@ -1,14 +1,23 @@
 import { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Modal, Animated, Easing } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Modal, Animated, Easing, TextInput, Alert } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   Database, FileText, LineChart as LineChartIcon, MessageCircle, Activity,
   AlertTriangle, BrainCircuit, Play, CheckCircle2, AlertCircle,
-  ArrowRight, CheckSquare, MessageSquare
+  ArrowRight, CheckSquare, MessageSquare, Upload, X, Link, Trash2
 } from 'lucide-react-native';
+import * as DocumentPicker from 'expo-document-picker';
 import { useStore } from '../../store/useStore';
 import { COLORS, FONTS, RADIUS } from '../../theme';
 import { API_BASE, MOCK_API_BASE } from '../../config';
+
+const DOC_TYPES = [
+  { id: 'pdf', label: 'PDF', ext: '.pdf', mime: 'application/pdf', color: '#f87171', desc: 'Reports, Catalogs' },
+  { id: 'excel', label: 'Excel', ext: '.xlsx', mime: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', color: COLORS.success, desc: 'Sales, Stock Data' },
+  { id: 'word', label: 'Word', ext: '.docx', mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', color: '#60a5fa', desc: 'Contracts, Emails' },
+  { id: 'csv', label: 'CSV', ext: '.csv', mime: 'text/csv', color: COLORS.secondary, desc: 'Warehouse Data' },
+  { id: 'url', label: 'URL', ext: '', mime: '', color: '#a78bfa', desc: 'Web / News Feed' },
+];
 
 const STEPS = [
   { label: 'Reading warehouse (STRUCTURED)...', icon: Database },
@@ -52,6 +61,14 @@ export default function AIIntelligence({ navigation }: any) {
   const [analyzedAt, setAnalyzedAt] = useState<string | null>(null);
   const [discountPercent, setDiscountPercent] = useState(20);
   const [durationHours, setDurationHours] = useState(4);
+
+  // Document upload state
+  const [uploadedDocs, setUploadedDocs] = useState<Record<string, { name: string; uri: string; mime: string } | null>>({
+    pdf: null, excel: null, word: null, csv: null, url: null,
+  });
+  const [urlInput, setUrlInput] = useState('');
+  const [uploadingId, setUploadingId] = useState<string | null>(null);
+  const [uploadInsights, setUploadInsights] = useState<any | null>(null);
   const [campaignType, setCampaignType] = useState('Send promotional push notification to customers');
   const [targetAudience, setTargetAudience] = useState('Wishlist Customers');
   const [estimatedReach, setEstimatedReach] = useState('1,200 users');
@@ -215,6 +232,64 @@ export default function AIIntelligence({ navigation }: any) {
     } catch {}
   };
 
+  const pickDocument = async (typeId: string) => {
+    if (typeId === 'url') return; // URL handled by text input
+    const typeInfo = DOC_TYPES.find(t => t.id === typeId);
+    if (!typeInfo) return;
+    try {
+      const result = await DocumentPicker.getDocumentAsync({
+        type: [typeInfo.mime, '*/*'],
+        copyToCacheDirectory: true,
+      });
+      if (!result.canceled && result.assets?.[0]) {
+        const asset = result.assets[0];
+        setUploadedDocs(prev => ({ ...prev, [typeId]: { name: asset.name, uri: asset.uri, mime: asset.mimeType || typeInfo.mime } }));
+      }
+    } catch (e) {
+      Alert.alert('Picker Error', 'Could not open file picker.');
+    }
+  };
+
+  const removeDoc = (typeId: string) => {
+    setUploadedDocs(prev => ({ ...prev, [typeId]: null }));
+    if (typeId === 'url') setUrlInput('');
+  };
+
+  const uploadAndAnalyze = async () => {
+    const hasFiles = Object.values(uploadedDocs).some(d => d !== null) || urlInput.trim();
+    if (!hasFiles) {
+      Alert.alert('No Documents', 'Please upload at least one document or enter a URL to analyze.');
+      return;
+    }
+    setUploadingId('analyzing');
+    setUploadInsights(null);
+    try {
+      // Upload each file sequentially
+      let lastResult: any = null;
+      for (const [id, doc] of Object.entries(uploadedDocs)) {
+        if (!doc) continue;
+        const formData = new FormData();
+        formData.append('file', { uri: doc.uri, type: doc.mime, name: doc.name } as any);
+        const res = await fetch(`${API_BASE}/upload`, { method: 'POST', body: formData });
+        if (res.ok) lastResult = await res.json();
+      }
+      // If URL, send as text file
+      if (urlInput.trim()) {
+        const blob = new Blob([urlInput.trim()], { type: 'text/plain' });
+        const formData = new FormData();
+        formData.append('file', blob, 'url_input.txt');
+        const res = await fetch(`${API_BASE}/upload`, { method: 'POST', body: formData });
+        if (res.ok) lastResult = await res.json();
+      }
+      if (lastResult) setUploadInsights(lastResult);
+      else Alert.alert('Upload Failed', 'Could not process documents. Make sure the backend is running.');
+    } catch (e: any) {
+      Alert.alert('Upload Error', e?.message || 'Network error. Check backend connection.');
+    } finally {
+      setUploadingId(null);
+    }
+  };
+
   const lowStockItems = inventory.filter(p => p.stock < 5);
 
   const stepAngle = (i: number) => ((i / STEPS.length) * Math.PI * 2) - Math.PI / 2;
@@ -280,6 +355,96 @@ export default function AIIntelligence({ navigation }: any) {
                 <Text style={styles.errorText}>ERROR: {error}</Text>
               </View>
             )}
+
+            {/* Upload Documents Section */}
+            <View style={styles.uploadSection}>
+              <View style={styles.uploadSectionHeader}>
+                <Upload size={16} color={COLORS.secondary} />
+                <Text style={styles.uploadSectionTitle}>Upload Your Documents</Text>
+              </View>
+              <Text style={styles.uploadSectionSub}>Upload up to 5 document types for AI analysis</Text>
+
+              <View style={styles.docGrid}>
+                {DOC_TYPES.map(dt => {
+                  const uploaded = uploadedDocs[dt.id];
+                  const isUrl = dt.id === 'url';
+                  return (
+                    <View key={dt.id} style={[styles.docSlot, { borderColor: uploaded || (isUrl && urlInput) ? `${dt.color}50` : 'rgba(255,255,255,0.08)' }]}>
+                      <View style={[styles.docSlotIcon, { backgroundColor: `${dt.color}18` }]}>
+                        {dt.id === 'pdf' && <FileText size={18} color={dt.color} />}
+                        {dt.id === 'excel' && <LineChartIcon size={18} color={dt.color} />}
+                        {dt.id === 'word' && <MessageSquare size={18} color={dt.color} />}
+                        {dt.id === 'csv' && <Database size={18} color={dt.color} />}
+                        {dt.id === 'url' && <Link size={18} color={dt.color} />}
+                      </View>
+                      <Text style={[styles.docSlotLabel, { color: dt.color }]}>{dt.label}</Text>
+                      <Text style={styles.docSlotDesc}>{dt.desc}</Text>
+
+                      {isUrl ? (
+                        <TextInput
+                          style={styles.urlInput}
+                          value={urlInput}
+                          onChangeText={setUrlInput}
+                          placeholder="https://..."
+                          placeholderTextColor={`${COLORS.muted}55`}
+                          autoCapitalize="none"
+                          keyboardType="url"
+                        />
+                      ) : uploaded ? (
+                        <View style={styles.uploadedRow}>
+                          <Text style={styles.uploadedName} numberOfLines={1}>{uploaded.name}</Text>
+                          <TouchableOpacity onPress={() => removeDoc(dt.id)} style={styles.removeBtn} activeOpacity={0.7}>
+                            <X size={10} color={COLORS.danger} />
+                          </TouchableOpacity>
+                        </View>
+                      ) : (
+                        <TouchableOpacity style={styles.pickBtn} onPress={() => pickDocument(dt.id)} activeOpacity={0.8}>
+                          <Upload size={10} color={COLORS.muted} />
+                          <Text style={styles.pickBtnText}>Choose</Text>
+                        </TouchableOpacity>
+                      )}
+                    </View>
+                  );
+                })}
+              </View>
+
+              <TouchableOpacity
+                style={[styles.analyzeBtn, uploadingId === 'analyzing' && { opacity: 0.6 }]}
+                onPress={uploadAndAnalyze}
+                disabled={uploadingId === 'analyzing'}
+                activeOpacity={0.85}
+              >
+                <BrainCircuit size={16} color="#000" />
+                <Text style={styles.analyzeBtnText}>{uploadingId === 'analyzing' ? 'Analyzing...' : 'Analyze My Documents'}</Text>
+              </TouchableOpacity>
+            </View>
+
+            {/* Upload Insights Result */}
+            {uploadInsights && (
+              <View style={styles.uploadInsightsCard}>
+                <View style={styles.uploadInsightsHeader}>
+                  <CheckCircle2 size={16} color={COLORS.success} />
+                  <Text style={styles.uploadInsightsTitle}>Document Analysis Complete</Text>
+                  <TouchableOpacity onPress={() => setUploadInsights(null)} style={{ marginLeft: 'auto' as any }}>
+                    <X size={14} color={COLORS.muted} />
+                  </TouchableOpacity>
+                </View>
+                {uploadInsights.summary && <Text style={styles.uploadInsightsSummary}>{uploadInsights.summary}</Text>}
+                {uploadInsights.problems?.slice(0, 3).map((p: string, i: number) => (
+                  <View key={i} style={styles.insightProblemRow}>
+                    <AlertTriangle size={10} color={COLORS.warning} />
+                    <Text style={styles.insightProblemText}>{p}</Text>
+                  </View>
+                ))}
+              </View>
+            )}
+
+            {/* Divider */}
+            <View style={styles.dividerRow}>
+              <View style={styles.dividerLine} />
+              <Text style={styles.dividerText}>OR USE LIVE AGENT DATA</Text>
+              <View style={styles.dividerLine} />
+            </View>
 
             {/* Data Sources */}
             {SOURCE_CONFIG.map(src => {
@@ -613,6 +778,33 @@ const styles = StyleSheet.create({
   idleWrap: { paddingHorizontal: 20, gap: 10 },
   errorCard: { backgroundColor: `${COLORS.danger}18`, borderWidth: 1, borderColor: `${COLORS.danger}33`, borderRadius: RADIUS.lg, padding: 14 },
   errorText: { fontFamily: FONTS.mono, fontSize: 11, color: COLORS.danger, textAlign: 'center' },
+  // Upload section styles
+  uploadSection: { backgroundColor: COLORS.card, borderRadius: RADIUS['2xl'], padding: 20, borderWidth: 1, borderColor: `${COLORS.secondary}22`, gap: 12 },
+  uploadSectionHeader: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  uploadSectionTitle: { fontFamily: FONTS.sansBold, fontSize: 14, color: COLORS.text },
+  uploadSectionSub: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 1 },
+  docGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
+  docSlot: { width: '47%', backgroundColor: COLORS.bg, borderRadius: RADIUS.xl, padding: 14, borderWidth: 1, gap: 6 },
+  docSlotIcon: { width: 36, height: 36, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
+  docSlotLabel: { fontFamily: FONTS.sansBold, fontSize: 12 },
+  docSlotDesc: { fontFamily: FONTS.mono, fontSize: 8, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 0.5 },
+  urlInput: { borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)', borderRadius: RADIUS.md, paddingHorizontal: 10, paddingVertical: 8, fontFamily: FONTS.sans, fontSize: 10, color: COLORS.text, backgroundColor: COLORS.card },
+  uploadedRow: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: `${COLORS.success}15`, borderRadius: RADIUS.md, paddingHorizontal: 8, paddingVertical: 5 },
+  uploadedName: { flex: 1, fontFamily: FONTS.mono, fontSize: 8, color: COLORS.success },
+  removeBtn: { padding: 2 },
+  pickBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: RADIUS.md, paddingHorizontal: 8, paddingVertical: 6 },
+  pickBtnText: { fontFamily: FONTS.mono, fontSize: 8, color: COLORS.muted, textTransform: 'uppercase' },
+  analyzeBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: COLORS.secondary, borderRadius: RADIUS.xl, paddingVertical: 14 },
+  analyzeBtnText: { fontFamily: FONTS.mono, fontSize: 10, color: '#000', textTransform: 'uppercase', fontWeight: '700', letterSpacing: 1 },
+  uploadInsightsCard: { backgroundColor: `${COLORS.success}0a`, borderRadius: RADIUS.xl, padding: 16, borderWidth: 1, borderColor: `${COLORS.success}25`, gap: 8 },
+  uploadInsightsHeader: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  uploadInsightsTitle: { fontFamily: FONTS.sansBold, fontSize: 13, color: COLORS.success },
+  uploadInsightsSummary: { fontFamily: FONTS.sans, fontSize: 12, color: COLORS.text, lineHeight: 18 },
+  insightProblemRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 6 },
+  insightProblemText: { fontFamily: FONTS.sans, fontSize: 11, color: COLORS.muted, flex: 1, lineHeight: 16 },
+  dividerRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginVertical: 4 },
+  dividerLine: { flex: 1, height: 1, backgroundColor: 'rgba(255,255,255,0.06)' },
+  dividerText: { fontFamily: FONTS.mono, fontSize: 8, color: `${COLORS.muted}77`, textTransform: 'uppercase', letterSpacing: 1 },
   sourceCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: COLORS.card, borderRadius: RADIUS.xl, padding: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.06)' },
   sourceName: { fontFamily: FONTS.serifItalic, fontSize: 13, color: COLORS.text, fontWeight: '700', marginBottom: 4 },
   typeBadge: { alignSelf: 'flex-start', paddingHorizontal: 8, paddingVertical: 2, borderRadius: RADIUS.sm, marginBottom: 4 },

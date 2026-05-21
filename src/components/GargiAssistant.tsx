@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Animated, Easing, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
-import { Send, X, Mic, BrainCircuit, Sparkles, MicOff, ShoppingBag, Zap, Package } from 'lucide-react-native';
+import { Send, X, Mic, BrainCircuit, Sparkles, MicOff, ShoppingBag, Zap, Package, Volume2 } from 'lucide-react-native';
+import { Audio } from 'expo-av';
+import * as Speech from 'expo-speech';
 import { useStore } from '../store/useStore';
 import { COLORS, FONTS, RADIUS } from '../theme';
 import { API_BASE, MOCK_API_BASE } from '../config';
@@ -85,12 +87,24 @@ export default function GargiAssistant({ navigation }: any) {
   const [message, setMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
   const scrollRef = useRef<ScrollView>(null);
   const slideAnim = useRef(new Animated.Value(600)).current;
   const prevModeRef = useRef(mode);
+  const recordingRef = useRef<Audio.Recording | null>(null);
 
   const lowStockCount = inventory.filter(p => p.stock < 5).length;
   const hasBadge = lowStockCount > 0 || saleRecommendedByAI;
+
+  // Cleanup recording on unmount
+  useEffect(() => {
+    return () => {
+      if (recordingRef.current) {
+        recordingRef.current.stopAndUnloadAsync().catch(() => {});
+      }
+      Speech.stop();
+    };
+  }, []);
 
   // Reset history when mode switches
   useEffect(() => {
@@ -168,7 +182,15 @@ export default function GargiAssistant({ navigation }: any) {
     fetchData();
   }, [gargiOpen]);
 
-  // Customer: no proactive fetch — Gargi is purely conversational
+  const speakText = (text: string) => {
+    try {
+      Speech.stop();
+      Speech.speak(text, { language: 'en-US', rate: 0.92, pitch: 1.05 });
+      setIsSpeaking(true);
+      // Reset speaking state after reasonable duration
+      setTimeout(() => setIsSpeaking(false), Math.min(text.length * 60, 8000));
+    } catch {}
+  };
 
   const executeSend = async (userMessage: string) => {
     if (!userMessage.trim()) return;
@@ -180,6 +202,7 @@ export default function GargiAssistant({ navigation }: any) {
     if (cached) {
       setHistory(prev => [...prev, { role: 'ai', text: cached }]);
       setIsTyping(false);
+      speakText(cached);
       return;
     }
 
@@ -220,20 +243,74 @@ export default function GargiAssistant({ navigation }: any) {
         showApprovalButtons: agentData?.sale_recommended && isAdmin,
         approvalStatus: agentData?.sale_recommended ? 'pending' : undefined,
       }]);
+      speakText(responseText);
     } catch (err: any) {
       const isTimeout = err?.message === 'timeout';
-      setHistory(prev => [...prev, {
-        role: 'ai',
-        text: isTimeout
-          ? "Response took too long. Here's what I know: check Inventory for stock alerts, or visit AI Lab for a full analysis."
-          : "I'm momentarily unavailable. Please try again in a moment.",
-      }]);
+      const errText = isTimeout
+        ? "Response took too long. Here's what I know: check Inventory for stock alerts, or visit AI Lab for a full analysis."
+        : "I'm momentarily unavailable. Please try again in a moment.";
+      setHistory(prev => [...prev, { role: 'ai', text: errText }]);
+      speakText(errText);
     } finally {
       setIsTyping(false);
     }
   };
 
   const handleSend = () => { const m = message; setMessage(''); executeSend(m); };
+
+  // Real voice recording with expo-av
+  const toggleListening = async () => {
+    if (isListening) {
+      setIsListening(false);
+      if (recordingRef.current) {
+        try {
+          await recordingRef.current.stopAndUnloadAsync();
+          const uri = recordingRef.current.getURI();
+          recordingRef.current = null;
+          if (uri) transcribeVoice(uri);
+        } catch { recordingRef.current = null; }
+      }
+    } else {
+      try {
+        const { granted } = await Audio.requestPermissionsAsync();
+        if (!granted) {
+          setHistory(prev => [...prev, { role: 'ai', text: 'Microphone permission is required for voice input. Please enable it in phone Settings → Apps → GarKS → Permissions.' }]);
+          return;
+        }
+        await Audio.setAudioModeAsync({ allowsRecordingIOS: true, playsInSilentModeIOS: true });
+        const { recording } = await Audio.Recording.createAsync(Audio.RecordingOptionsPresets.HIGH_QUALITY);
+        recordingRef.current = recording;
+        setIsListening(true);
+      } catch {
+        setHistory(prev => [...prev, { role: 'ai', text: 'Unable to start voice recording. Please try typing your message instead.' }]);
+      }
+    }
+  };
+
+  const transcribeVoice = async (uri: string) => {
+    setIsTyping(true);
+    try {
+      const formData = new FormData();
+      formData.append('file', { uri, type: 'audio/m4a', name: 'voice.m4a' } as any);
+      const res = await withTimeout(
+        fetch(`${API_BASE}/api/voice/transcribe`, { method: 'POST', body: formData }),
+        20000
+      );
+      const data = await res.json();
+      if (data.text?.trim()) {
+        setMessage('');
+        setIsTyping(false);
+        executeSend(data.text.trim());
+        return;
+      }
+    } catch { /* silent — user can type instead */ }
+    setIsTyping(false);
+  };
+
+  const stopSpeaking = () => {
+    Speech.stop();
+    setIsSpeaking(false);
+  };
 
   const handleInlineApprove = async (index: number) => {
     const msg = history[index];
@@ -275,16 +352,6 @@ export default function GargiAssistant({ navigation }: any) {
     setHistory(prev => [...prev, { role: 'ai', text: `Restock order placed for ${category}. You'll see it reflected in the Inventory tab.` }]);
   };
 
-  const toggleListening = () => {
-    setIsListening(prev => {
-      if (!prev) {
-        const sample = isAdmin ? 'Show me current stock levels.' : 'Show me some elegant evening wear.';
-        setTimeout(() => { setIsListening(false); setMessage(sample); }, 2500);
-      }
-      return !prev;
-    });
-  };
-
   if (!gargiOpen) {
     return (
       <View style={styles.fabWrap}>
@@ -315,9 +382,16 @@ export default function GargiAssistant({ navigation }: any) {
               <Text style={styles.chatHeaderSub}>{isAdmin ? 'Powered by Antigravity' : 'Gargi · Personalized Style'}</Text>
             </View>
           </View>
-          <TouchableOpacity onPress={() => setGargiOpen(false)} style={styles.chatCloseBtn} activeOpacity={0.7}>
-            <X size={20} color={COLORS.muted} />
-          </TouchableOpacity>
+          <View style={styles.chatHeaderRight}>
+            {isSpeaking && (
+              <TouchableOpacity onPress={stopSpeaking} style={styles.speakerBtn} activeOpacity={0.7}>
+                <Volume2 size={18} color={COLORS.secondary} />
+              </TouchableOpacity>
+            )}
+            <TouchableOpacity onPress={() => setGargiOpen(false)} style={styles.chatCloseBtn} activeOpacity={0.7}>
+              <X size={20} color={COLORS.muted} />
+            </TouchableOpacity>
+          </View>
         </View>
 
         {/* Messages */}
@@ -387,7 +461,7 @@ export default function GargiAssistant({ navigation }: any) {
                   </View>
                 )}
 
-                {/* ADMIN: Marketing recommendation with Launch Campaign button */}
+                {/* ADMIN: Marketing recommendation */}
                 {msg.isMarketingRecommendation && isAdmin && (
                   <View style={[styles.actionBlock, { borderColor: `${COLORS.primary}33`, backgroundColor: `${COLORS.primary}0a` }]}>
                     <View style={styles.actionBlockHeader}>
@@ -402,7 +476,7 @@ export default function GargiAssistant({ navigation }: any) {
                   </View>
                 )}
 
-                {/* ADMIN: Performance report with AI Lab shortcut */}
+                {/* ADMIN: Performance report */}
                 {msg.isPerformanceReport && isAdmin && (
                   <View style={[styles.actionBlock, { borderColor: `${COLORS.success}33`, backgroundColor: `${COLORS.success}0a` }]}>
                     <View style={styles.actionBlockHeader}>
@@ -417,7 +491,7 @@ export default function GargiAssistant({ navigation }: any) {
                   </View>
                 )}
 
-                {/* ADMIN: Agent analysis result with action buttons */}
+                {/* ADMIN: Agent analysis result */}
                 {msg.isAgentResult && isAdmin && msg.agentData && (
                   <View style={styles.agentMetaBlock}>
                     <View style={styles.agentMetaHeader}>
@@ -450,7 +524,7 @@ export default function GargiAssistant({ navigation }: any) {
                   </View>
                 )}
 
-                {/* CUSTOMER: Shopping helper actions */}
+                {/* CUSTOMER: Shopping helper */}
                 {!isAdmin && msg.role === 'ai' && msg.text.toLowerCase().includes('jacket') && (
                   <TouchableOpacity style={[styles.actionBlock, { borderColor: `${COLORS.primary}22`, backgroundColor: `${COLORS.primary}0a`, flexDirection: 'row', alignItems: 'center', gap: 8 }]} onPress={() => navigation?.navigate?.('Shop')} activeOpacity={0.8}>
                     <ShoppingBag size={12} color={COLORS.primary} />
@@ -483,7 +557,7 @@ export default function GargiAssistant({ navigation }: any) {
                 {[1,2,3,4,5,6,7,8].map(i => (
                   <View key={i} style={[styles.voiceBar, { height: Math.random() * 16 + 4 }]} />
                 ))}
-                <Text style={styles.listeningText}>Capturing Voice...</Text>
+                <Text style={styles.listeningText}>Listening... Tap mic to stop</Text>
               </View>
             )}
             <View style={styles.inputRow}>
@@ -492,13 +566,16 @@ export default function GargiAssistant({ navigation }: any) {
                   style={styles.input}
                   value={message}
                   onChangeText={setMessage}
-                  placeholder={isAdmin ? 'Ask about stock, revenue, campaigns...' : 'Ask about style, sizing, collections...'}
+                  placeholder={isAdmin ? 'Ask anything — stock, revenue, campaigns...' : 'Ask anything — style, sizing, collections...'}
                   placeholderTextColor={`${COLORS.muted}55`}
                   onSubmitEditing={handleSend}
                   returnKeyType="send"
+                  multiline={false}
                 />
-                <TouchableOpacity onPress={toggleListening} style={styles.micBtn} activeOpacity={0.7}>
-                  {isListening ? <MicOff size={18} color={COLORS.primary} /> : <Mic size={18} color={COLORS.muted} />}
+                <TouchableOpacity onPress={toggleListening} style={[styles.micBtn, isListening && styles.micBtnActive]} activeOpacity={0.7}>
+                  {isListening
+                    ? <MicOff size={18} color={COLORS.danger} />
+                    : <Mic size={18} color={COLORS.muted} />}
                 </TouchableOpacity>
               </View>
               <TouchableOpacity
@@ -526,9 +603,11 @@ const styles = StyleSheet.create({
   chatPanel: { position: 'absolute', bottom: 0, left: 0, right: 0, height: '78%', backgroundColor: COLORS.card, borderTopLeftRadius: RADIUS['3xl'], borderTopRightRadius: RADIUS['3xl'], zIndex: 150, borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.06)' },
   chatHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 24, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.04)' },
   chatHeaderLeft: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  chatHeaderRight: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   chatHeaderIcon: { width: 44, height: 44, backgroundColor: `${COLORS.primary}18`, borderRadius: RADIUS.lg, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: `${COLORS.primary}22` },
   chatHeaderTitle: { fontFamily: FONTS.serifItalic, fontSize: 18, color: COLORS.text },
   chatHeaderSub: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.muted, textTransform: 'uppercase', letterSpacing: 2 },
+  speakerBtn: { padding: 8, borderRadius: RADIUS.full, backgroundColor: `${COLORS.secondary}15` },
   chatCloseBtn: { padding: 10, borderRadius: RADIUS.full },
   messages: { flex: 1, backgroundColor: `${COLORS.bg}33` },
   msgRow: { flexDirection: 'row', justifyContent: 'flex-start' },
@@ -556,12 +635,13 @@ const styles = StyleSheet.create({
   quickAction: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 12, paddingVertical: 7, backgroundColor: COLORS.bg, borderRadius: RADIUS.lg, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)' },
   quickActionText: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.text, textTransform: 'uppercase', letterSpacing: 1 },
   listeningRow: { flexDirection: 'row', alignItems: 'center', gap: 4, justifyContent: 'center', paddingVertical: 8 },
-  voiceBar: { width: 3, backgroundColor: COLORS.primary, borderRadius: 2 },
-  listeningText: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.primary, textTransform: 'uppercase', letterSpacing: 3, marginLeft: 8 },
+  voiceBar: { width: 3, backgroundColor: COLORS.danger, borderRadius: 2 },
+  listeningText: { fontFamily: FONTS.mono, fontSize: 9, color: COLORS.danger, textTransform: 'uppercase', letterSpacing: 2, marginLeft: 8 },
   inputRow: { flexDirection: 'row', gap: 10, alignItems: 'center' },
   inputWrap: { flex: 1, flexDirection: 'row', alignItems: 'center', backgroundColor: COLORS.bg, borderRadius: RADIUS.xl, borderWidth: 1, borderColor: 'rgba(255,255,255,0.08)', paddingHorizontal: 16, paddingVertical: 4 },
   input: { flex: 1, fontFamily: FONTS.sans, fontSize: 13, color: COLORS.text, paddingVertical: 10 },
-  micBtn: { padding: 6 },
+  micBtn: { padding: 6, borderRadius: RADIUS.full },
+  micBtnActive: { backgroundColor: `${COLORS.danger}18` },
   sendBtn: { width: 48, height: 48, backgroundColor: COLORS.primary, borderRadius: RADIUS.xl, alignItems: 'center', justifyContent: 'center', shadowColor: COLORS.primary, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 8, elevation: 6 },
   sendBtnDisabled: { opacity: 0.4 },
 });

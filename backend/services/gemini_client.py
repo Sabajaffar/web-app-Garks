@@ -312,25 +312,74 @@ with lower risk. Return ONLY valid JSON matching the action schema."""
         return fallback
 
 
-_FASHION_KEYWORDS = {
-    "dress", "jacket", "shirt", "trousers", "pant", "suit", "coat", "sweater",
-    "polo", "fabric", "leather", "cotton", "wool", "silk", "collection",
-    "fashion", "style", "outfit", "wardrobe", "size", "colour", "color",
-    "wear", "garment", "cloth", "sale", "discount", "price", "order", "delivery",
-    "return", "shipping", "garks", "brand", "store", "shop", "buy", "recommend",
-}
-_OFFTOPIC_KEYWORDS = {
-    "weather", "politics", "news", "sports", "cricket", "football", "food",
-    "recipe", "cook", "movie", "music", "song", "code", "programming", "math",
-    "capital", "country", "history", "science", "medicine", "doctor",
-}
+ADMIN_SYSTEM_PROMPT = (
+    "You are Gargi, an intelligent AI assistant for GarKS premium fashion store. "
+    "You help the admin monitor sales, inventory, marketing performance, and supplier data. "
+    "You are warm, professional, and proactive. Answer any question the user asks naturally and helpfully."
+)
+
+CUSTOMER_SYSTEM_PROMPT = (
+    "You are Gargi, a helpful fashion assistant for GarKS premium store. "
+    "Help customers find products, answer style questions, check availability, and give fashion recommendations. "
+    "Be friendly, stylish, and helpful."
+)
 
 
-def _is_offtopic(message: str) -> bool:
-    words = set(message.lower().split())
-    if words & _OFFTOPIC_KEYWORDS and not words & _FASHION_KEYWORDS:
-        return True
-    return False
+def _mock_chat_response(message: str, is_admin: bool, context: Dict[str, Any]) -> str:
+    """Smart fallback responses for when GEMINI_API_KEY is not set."""
+    msg = message.lower().strip()
+    name = context.get("userName", "")
+    greeting = f", {name}" if name else ""
+
+    # Greetings
+    if any(g in msg for g in ["hello", "hi", "hey", "salaam", "salam", "assalam", "howdy", "sup"]):
+        if is_admin:
+            return f"Hello{greeting}! I'm Gargi, your GarKS retail intelligence assistant. Today's highlights: Leather Jacket stock is CRITICAL and revenue is down 14.2% this week. What would you like to explore?"
+        return f"Welcome to GarKS{greeting}! I'm Gargi, your personal fashion concierge. How can I help you discover something beautiful today?"
+
+    # How are you / general chat
+    if any(g in msg for g in ["how are you", "kya hal", "kaisa", "what's up", "wassup"]):
+        if is_admin:
+            return "I'm analyzing your store data continuously! Right now: 2 critical stock alerts and revenue trend needs attention. Shall I run a full agent analysis?"
+        return "I'm wonderful and ready to help you find your perfect style! GarKS has some stunning new arrivals this season. What are you looking for?"
+
+    if is_admin:
+        if any(k in msg for k in ["stock", "inventory", "items"]):
+            return "Live inventory: Biker Leather Jacket is at 0 units — critically depleted. Cashmere Sweater also out. Emergency reorder of PKR 48,000 is recommended. Shall I trigger the full agent pipeline?"
+        if any(k in msg for k in ["sale", "revenue", "discount", "flash"]):
+            return "Revenue is down 14.2% vs last week, driven by the Leather Jacket stockout. A 15% Winter Collection flash sale for 6 hours would recover approximately PKR 18,000. Ready to launch — tap 'Apply Strategy' in the AI Lab."
+        if any(k in msg for k in ["agent", "run", "analys", "report", "analysis"]):
+            return "Running a quick analysis... Stock risk: CRITICAL. Two items depleted. Contradiction score 0.87 on inventory data. I recommend opening the AI Lab for the full 5-step action chain."
+        if any(k in msg for k in ["marketing", "campaign", "promo", "email"]):
+            return "Current marketing performance shows 3.2% CTR on email campaigns — above industry average. Recommend targeting wishlist customers for the Winter Collection promo. Estimated reach: 1,200 users."
+        if any(k in msg for k in ["supplier", "vendor", "order"]):
+            return "You have 4 active suppliers. Tuscan Leather S.p.A is your top-rated vendor (4.8★) and can fulfill an emergency Leather Jacket reorder within 5 days. Shall I initiate a purchase order?"
+        if any(k in msg for k in ["customer", "user", "review"]):
+            return "Customer satisfaction is at 4.2/5 this month. 3 recent reviews mention slow delivery — recommend addressing logistics before the flash sale launch."
+        if any(k in msg for k in ["dashboard", "kpi", "metrics", "overview"]):
+            return "Store overview: Revenue PKR 45,231 (down 14.2%), 127 active orders, stock risk CRITICAL on 2 SKUs. Flash sale recommended to recover weekly target. Open Dashboard for full KPIs."
+        # General admin fallback
+        return f"I've reviewed your store metrics{greeting}. Stock risk is CRITICAL (Leather Jackets depleted), revenue down 14.2% this week. Would you like a full agent analysis or help with a specific area?"
+    else:
+        # Customer mode — answer any question helpfully
+        if any(k in msg for k in ["jacket", "leather", "biker"]):
+            return "Our Biker Leather Jacket in black is an absolute bestseller! It's a structured silhouette with premium Italian leather. We also have the Classic Trench Coat for a more refined look. Would you like styling options?"
+        if any(k in msg for k in ["size", "fit", "sizing", "measurements"]):
+            return "Our sizing runs true to standard. For jackets, take your usual size for a fitted look or size up for relaxed. Our team can also help with custom measurements — just ask!"
+        if any(k in msg for k in ["price", "cost", "how much", "kitna", "rate"]):
+            return "Our Winter Collection ranges from PKR 3,500 for accessories to PKR 25,000 for premium leather jackets. All crafted from quality materials. Which item caught your eye?"
+        if any(k in msg for k in ["new", "arrival", "latest", "collection", "nayi"]):
+            return "Just in! Our latest Winter Collection features the Biker Leather Jacket, Classic Trench Coat, and Cashmere Blend Sweater. All available now — which one interests you?"
+        if any(k in msg for k in ["order", "track", "delivery", "ship", "deliver"]):
+            return "Orders arrive within 3-5 business days across Pakistan. Express delivery available for Karachi, Lahore, and Islamabad within 24 hours. Want to place an order?"
+        if any(k in msg for k in ["outfit", "style", "recommend", "suggest", "wear", "pairing"]):
+            return "For a chic winter look: pair the Biker Leather Jacket with slim-fit trousers and ankle boots. For formal: Classic Trench Coat over a white dress shirt. Which vibe suits you?"
+        if any(k in msg for k in ["return", "exchange", "refund"]):
+            return "GarKS offers a 7-day return policy for unworn items with tags intact. Exchange is free on all sizes. Contact support@garks.com or visit any branch for assistance."
+        if any(k in msg for k in ["color", "colour", "available", "colors"]):
+            return "Our Leather Jacket comes in classic Black, Deep Brown, and Burgundy. The Cashmere Sweater is available in Ivory, Navy, and Camel. Would you like to see a specific color?"
+        # General customer fallback
+        return f"I'm here to help you find the perfect piece from GarKS{greeting}! We specialize in premium fashion — leather jackets, cashmere sweaters, and tailored suits. What are you looking for today?"
 
 
 def chat_with_gargi(
@@ -339,37 +388,26 @@ def chat_with_gargi(
     context: Dict[str, Any],
 ) -> str:
     """Gargi AI concierge — conversational response for in-app chat."""
-    role = "the GarKS Admin" if is_admin else "a valued GarKS customer"
     agent_context = ""
     if context.get("agentAnalysis"):
         agent_context = f"\nLatest Agent Analysis: {json.dumps(context['agentAnalysis'])[:500]}"
 
-    # Demo mode — no API key
+    # Demo mode — no API key, use smart mock
     if not GEMINI_OK or not os.getenv("GEMINI_API_KEY"):
-        if is_admin:
-            msg_lower = message.lower()
-            if "stock" in msg_lower or "inventory" in msg_lower:
-                return "Live inventory check: Biker Leather Jacket is at 0 units — critically depleted. Cashmere Sweater also out. Emergency reorder of PKR 48,000 is recommended. Shall I trigger the full agent pipeline?"
-            if "sale" in msg_lower or "revenue" in msg_lower or "discount" in msg_lower:
-                return "Revenue is down 14.2% vs last week, driven by the Leather Jacket stockout. A 15% Winter Collection flash sale for 6 hours would recover approximately PKR 18,000. Ready to launch — tap 'Apply Strategy' in the AI Lab."
-            if "agent" in msg_lower or "run" in msg_lower or "analys" in msg_lower:
-                return "Running a quick analysis now... Stock risk: CRITICAL. Two items depleted. Contradiction score 0.87 on inventory data. I recommend opening the AI Lab for the full 5-step action chain."
-            return "Analyzing store metrics... Revenue trending down 14.2% this week. Leather Jacket stock is critically low — recommend emergency reorder from Tuscan Leather S.p.A. A 15% flash sale on Winter Collection would accelerate turnover."
-        # Customer mode
-        if _is_offtopic(message):
-            return "I'm your dedicated GarKS fashion concierge — I'm best at helping with our collections, style advice, sizing, and orders. What can I help you discover today?"
-        return "Welcome to GarKS! Our Biker Leather Jacket in black is a bestseller this season. May I help you find your perfect size or suggest complementary pieces from our Winter Collection?"
+        return _mock_chat_response(message, is_admin, context)
 
-    prompt = f"""You are Gargi, the AI Fashion Concierge for GarKS — a premium garments brand.
-You are speaking with {role} named {context.get('userName', 'the user')}.{agent_context}
+    system_prompt = ADMIN_SYSTEM_PROMPT if is_admin else CUSTOMER_SYSTEM_PROMPT
+    name = context.get("userName", "the user")
+
+    prompt = f"""{system_prompt}{agent_context}
+
+You are speaking with {name}.
 
 User message: "{message}"
 
-{"As an admin query, provide operational insights, agent analysis summaries, and specific actionable recommendations (reorder quantities, sale percentages, campaign targets)." if is_admin else "As a customer query, be helpful, warm and sophisticated about GarKS products, fashion advice, sizing, and orders. If the user asks about anything unrelated to fashion, clothing, or GarKS (e.g. weather, politics, coding, sports), politely respond: 'I'm your dedicated fashion concierge — let me help you with style or our collections instead!'"}
+Respond naturally and helpfully in 2-4 sentences. Plain text only, no markdown, no bullet points."""
 
-Respond in 2-4 sentences. Be direct and specific. No markdown, plain text only."""
-
-    return _call(prompt, temperature=0.7, max_tokens=256)
+    return _call(prompt, temperature=0.75, max_tokens=300)
 
 
 # ─────────────────────────── MOCK FALLBACKS ──────────────────────────────────
